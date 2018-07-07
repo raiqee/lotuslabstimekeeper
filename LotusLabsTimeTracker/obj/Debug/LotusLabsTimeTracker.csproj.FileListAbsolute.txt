@@ -1,0 +1,14 @@
+C:\Users\jamesryanpatiag\source\repos\LotusLabsTimeTracker\LotusLabsTimeTracker\bin\Debug\LotusLabsTimeTracker.exe.config
+C:\Users\jamesryanpatiag\source\repos\LotusLabsTimeTracker\LotusLabsTimeTracker\bin\Debug\LotusLabsTimeTracker.exe
+C:\Users\jamesryanpatiag\source\repos\LotusLabsTimeTracker\LotusLabsTimeTracker\bin\Debug\LotusLabsTimeTracker.pdb
+C:\Users\jamesryanpatiag\source\repos\LotusLabsTimeTracker\LotusLabsTimeTracker\obj\Debug\LotusLabsTimeTracker.csprojAssemblyReference.cache
+C:\Users\jamesryanpatiag\source\repos\LotusLabsTimeTracker\LotusLabsTimeTracker\obj\Debug\LotusLabsTimeTracker.Main.resources
+C:\Users\jamesryanpatiag\source\repos\LotusLabsTimeTracker\LotusLabsTimeTracker\obj\Debug\LotusLabsTimeTracker.Properties.Resources.resources
+C:\Users\jamesryanpatiag\source\repos\LotusLabsTimeTracker\LotusLabsTimeTracker\obj\Debug\LotusLabsTimeTracker.csproj.GenerateResource.cache
+C:\Users\jamesryanpatiag\source\repos\LotusLabsTimeTracker\LotusLabsTimeTracker\obj\Debug\LotusLabsTimeTracker.csproj.CoreCompileInputs.cache
+C:\Users\jamesryanpatiag\source\repos\LotusLabsTimeTracker\LotusLabsTimeTracker\obj\Debug\LotusLabsTimeTracker.exe
+C:\Users\jamesryanpatiag\source\repos\LotusLabsTimeTracker\LotusLabsTimeTracker\obj\Debug\LotusLabsTimeTracker.pdb
+C:\Users\jamesryanpatiag\source\repos\LotusLabsTimeTracker\LotusLabsTimeTracker\obj\Debug\LotusLabsTimeTracker.views.AddNewUser.resources
+C:\Users\jamesryanpatiag\source\repos\LotusLabsTimeTracker\LotusLabsTimeTracker\obj\Debug\LotusLabsTimeTracker.views.EditReport.resources
+C:\Users\jamesryanpatiag\source\repos\LotusLabsTimeTracker\LotusLabsTimeTracker\obj\Debug\LotusLabsTimeTracker.views.EditUser.resources
+C:\Users\jamesryanpatiag\source\repos\LotusLabsTimeTracker\LotusLabsTimeTracker\obj\Debug\LotusLabsTimeTracker.views.MainMenu.resources
