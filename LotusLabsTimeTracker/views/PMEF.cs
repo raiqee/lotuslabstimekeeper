@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace LotusLabsTimeTracker.views
 {
-    public partial class EditReport : Form
+    public partial class PMEF : Form
     {
-        public EditReport()
+        public PMEF()
         {
             InitializeComponent();
         }

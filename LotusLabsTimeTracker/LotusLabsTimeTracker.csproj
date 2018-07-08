@@ -68,11 +68,17 @@
     <Compile Include="views\AddNewUser.Designer.cs">
       <DependentUpon>AddNewUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\EditReport.cs">
+    <Compile Include="views\FiledPMEF.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\EditReport.Designer.cs">
-      <DependentUpon>EditReport.cs</DependentUpon>
+    <Compile Include="views\FiledPMEF.Designer.cs">
+      <DependentUpon>FiledPMEF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\PMEF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\PMEF.Designer.cs">
+      <DependentUpon>PMEF.cs</DependentUpon>
     </Compile>
     <Compile Include="views\EditUser.cs">
       <SubType>Form</SubType>
@@ -80,11 +86,23 @@
     <Compile Include="views\EditUser.Designer.cs">
       <DependentUpon>EditUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="views\LogIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\LogIn.Designer.cs">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="views\MainMenu.Designer.cs">
       <DependentUpon>MainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\MaintenanceMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\MaintenanceMenu.Designer.cs">
+      <DependentUpon>MaintenanceMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="views\ProductionModule.cs">
       <SubType>Form</SubType>
@@ -97,6 +115,36 @@
     </Compile>
     <Compile Include="views\ProductReport.Designer.cs">
       <DependentUpon>ProductReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\ProfileManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\ProfileManager.Designer.cs">
+      <DependentUpon>ProfileManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\ProjectType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\ProjectType.Designer.cs">
+      <DependentUpon>ProjectType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\TaskManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\TaskManager.Designer.cs">
+      <DependentUpon>TaskManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\TaskType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\TaskType.Designer.cs">
+      <DependentUpon>TaskType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\WorkType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\WorkType.Designer.cs">
+      <DependentUpon>WorkType.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
@@ -114,20 +162,44 @@
     <EmbeddedResource Include="views\AddNewUser.resx">
       <DependentUpon>AddNewUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\EditReport.resx">
-      <DependentUpon>EditReport.cs</DependentUpon>
+    <EmbeddedResource Include="views\FiledPMEF.resx">
+      <DependentUpon>FiledPMEF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\PMEF.resx">
+      <DependentUpon>PMEF.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\EditUser.resx">
       <DependentUpon>EditUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="views\LogIn.resx">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="views\MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\MaintenanceMenu.resx">
+      <DependentUpon>MaintenanceMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\ProductionModule.resx">
       <DependentUpon>ProductionModule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\ProductReport.resx">
       <DependentUpon>ProductReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\ProfileManager.resx">
+      <DependentUpon>ProfileManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\ProjectType.resx">
+      <DependentUpon>ProjectType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\TaskManager.resx">
+      <DependentUpon>TaskManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\TaskType.resx">
+      <DependentUpon>TaskType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\WorkType.resx">
+      <DependentUpon>WorkType.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -159,6 +231,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ProductionModule.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ProjectManager1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TaskManager2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Task Type.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Project Type.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Work Type.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

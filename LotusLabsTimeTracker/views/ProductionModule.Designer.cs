@@ -29,27 +29,29 @@
         private void InitializeComponent()
         {
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbo_prodTaskType = new System.Windows.Forms.ComboBox();
+            this.cbo_prodProjType = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cbo_prodWorkType = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_prodDetails = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.lbl_elapsedTime = new System.Windows.Forms.Label();
+            this.btn_prodStart = new System.Windows.Forms.Button();
+            this.btn_prodCancel = new System.Windows.Forms.Button();
+            this.btn_prodConfirm = new System.Windows.Forms.Button();
+            this.btn_prodReport = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lbl_currentDate = new System.Windows.Forms.Label();
+            this.lbl_empNo = new System.Windows.Forms.Label();
+            this.lbl_empName = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label7
@@ -62,21 +64,21 @@
             this.label7.TabIndex = 13;
             this.label7.Text = "Task Type:";
             // 
-            // comboBox1
+            // cbo_prodTaskType
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(173, 219);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(248, 24);
-            this.comboBox1.TabIndex = 12;
+            this.cbo_prodTaskType.FormattingEnabled = true;
+            this.cbo_prodTaskType.Location = new System.Drawing.Point(173, 219);
+            this.cbo_prodTaskType.Name = "cbo_prodTaskType";
+            this.cbo_prodTaskType.Size = new System.Drawing.Size(248, 24);
+            this.cbo_prodTaskType.TabIndex = 12;
             // 
-            // comboBox2
+            // cbo_prodProjType
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(173, 260);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(248, 24);
-            this.comboBox2.TabIndex = 12;
+            this.cbo_prodProjType.FormattingEnabled = true;
+            this.cbo_prodProjType.Location = new System.Drawing.Point(173, 260);
+            this.cbo_prodProjType.Name = "cbo_prodProjType";
+            this.cbo_prodProjType.Size = new System.Drawing.Size(248, 24);
+            this.cbo_prodProjType.TabIndex = 12;
             // 
             // label8
             // 
@@ -84,17 +86,17 @@
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(53, 260);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(106, 17);
+            this.label8.Size = new System.Drawing.Size(105, 17);
             this.label8.TabIndex = 13;
-            this.label8.Text = "Project Code:";
+            this.label8.Text = "Project Type:";
             // 
-            // comboBox3
+            // cbo_prodWorkType
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(173, 302);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(248, 24);
-            this.comboBox3.TabIndex = 12;
+            this.cbo_prodWorkType.FormattingEnabled = true;
+            this.cbo_prodWorkType.Location = new System.Drawing.Point(173, 302);
+            this.cbo_prodWorkType.Name = "cbo_prodWorkType";
+            this.cbo_prodWorkType.Size = new System.Drawing.Size(248, 24);
+            this.cbo_prodWorkType.TabIndex = 12;
             // 
             // label9
             // 
@@ -106,13 +108,13 @@
             this.label9.TabIndex = 13;
             this.label9.Text = "Work Type:";
             // 
-            // textBox1
+            // txt_prodDetails
             // 
-            this.textBox1.Location = new System.Drawing.Point(37, 385);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(409, 132);
-            this.textBox1.TabIndex = 15;
+            this.txt_prodDetails.Location = new System.Drawing.Point(37, 385);
+            this.txt_prodDetails.Multiline = true;
+            this.txt_prodDetails.Name = "txt_prodDetails";
+            this.txt_prodDetails.Size = new System.Drawing.Size(409, 132);
+            this.txt_prodDetails.TabIndex = 15;
             // 
             // label10
             // 
@@ -134,73 +136,73 @@
             this.label11.TabIndex = 16;
             this.label11.Text = "Elapsed Time:";
             // 
-            // label12
+            // lbl_elapsedTime
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(368, 525);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(72, 17);
-            this.label12.TabIndex = 17;
-            this.label12.Text = "00:00:00";
+            this.lbl_elapsedTime.AutoSize = true;
+            this.lbl_elapsedTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_elapsedTime.Location = new System.Drawing.Point(368, 525);
+            this.lbl_elapsedTime.Name = "lbl_elapsedTime";
+            this.lbl_elapsedTime.Size = new System.Drawing.Size(72, 17);
+            this.lbl_elapsedTime.TabIndex = 17;
+            this.lbl_elapsedTime.Text = "00:00:00";
             // 
-            // button1
+            // btn_prodStart
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.Highlight;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Location = new System.Drawing.Point(36, 559);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(124, 38);
-            this.button1.TabIndex = 26;
-            this.button1.Text = "Start";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btn_prodStart.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btn_prodStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_prodStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_prodStart.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_prodStart.Location = new System.Drawing.Point(36, 559);
+            this.btn_prodStart.Name = "btn_prodStart";
+            this.btn_prodStart.Size = new System.Drawing.Size(124, 38);
+            this.btn_prodStart.TabIndex = 26;
+            this.btn_prodStart.Text = "Start";
+            this.btn_prodStart.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btn_prodCancel
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.Highlight;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button2.Location = new System.Drawing.Point(321, 559);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(124, 38);
-            this.button2.TabIndex = 27;
-            this.button2.Text = "Cancel";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btn_prodCancel.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btn_prodCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_prodCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_prodCancel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_prodCancel.Location = new System.Drawing.Point(321, 559);
+            this.btn_prodCancel.Name = "btn_prodCancel";
+            this.btn_prodCancel.Size = new System.Drawing.Size(124, 38);
+            this.btn_prodCancel.TabIndex = 27;
+            this.btn_prodCancel.Text = "Cancel";
+            this.btn_prodCancel.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btn_prodConfirm
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.Highlight;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button3.Location = new System.Drawing.Point(177, 559);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(124, 38);
-            this.button3.TabIndex = 28;
-            this.button3.Text = "Confirm";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btn_prodConfirm.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btn_prodConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_prodConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_prodConfirm.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_prodConfirm.Location = new System.Drawing.Point(177, 559);
+            this.btn_prodConfirm.Name = "btn_prodConfirm";
+            this.btn_prodConfirm.Size = new System.Drawing.Size(124, 38);
+            this.btn_prodConfirm.TabIndex = 28;
+            this.btn_prodConfirm.Text = "Confirm";
+            this.btn_prodConfirm.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // btn_prodReport
             // 
-            this.button4.BackColor = System.Drawing.SystemColors.Highlight;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button4.Location = new System.Drawing.Point(114, 627);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(248, 42);
-            this.button4.TabIndex = 29;
-            this.button4.Text = "View Report";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btn_prodReport.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btn_prodReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_prodReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_prodReport.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_prodReport.Location = new System.Drawing.Point(114, 627);
+            this.btn_prodReport.Name = "btn_prodReport";
+            this.btn_prodReport.Size = new System.Drawing.Size(248, 42);
+            this.btn_prodReport.TabIndex = 29;
+            this.btn_prodReport.Text = "View Report";
+            this.btn_prodReport.UseVisualStyleBackColor = false;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.lbl_currentDate);
+            this.groupBox1.Controls.Add(this.lbl_empNo);
+            this.groupBox1.Controls.Add(this.lbl_empName);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
@@ -210,32 +212,32 @@
             this.groupBox1.TabIndex = 30;
             this.groupBox1.TabStop = false;
             // 
-            // label6
+            // lbl_currentDate
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(148, 72);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(164, 17);
-            this.label6.TabIndex = 17;
-            this.label6.Text = "06/06/2018 02:44:42 PM";
+            this.lbl_currentDate.AutoSize = true;
+            this.lbl_currentDate.Location = new System.Drawing.Point(148, 72);
+            this.lbl_currentDate.Name = "lbl_currentDate";
+            this.lbl_currentDate.Size = new System.Drawing.Size(164, 17);
+            this.lbl_currentDate.TabIndex = 17;
+            this.lbl_currentDate.Text = "06/06/2018 02:44:42 PM";
             // 
-            // label5
+            // lbl_empNo
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(148, 43);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(101, 17);
-            this.label5.TabIndex = 16;
-            this.label5.Text = "EMP05102015";
+            this.lbl_empNo.AutoSize = true;
+            this.lbl_empNo.Location = new System.Drawing.Point(148, 43);
+            this.lbl_empNo.Name = "lbl_empNo";
+            this.lbl_empNo.Size = new System.Drawing.Size(101, 17);
+            this.lbl_empNo.TabIndex = 16;
+            this.lbl_empNo.Text = "EMP05102015";
             // 
-            // label4
+            // lbl_empName
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(148, 15);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 17);
-            this.label4.TabIndex = 15;
-            this.label4.Text = "Jane Doe";
+            this.lbl_empName.AutoSize = true;
+            this.lbl_empName.Location = new System.Drawing.Point(148, 15);
+            this.lbl_empName.Name = "lbl_empName";
+            this.lbl_empName.Size = new System.Drawing.Size(69, 17);
+            this.lbl_empName.TabIndex = 15;
+            this.lbl_empName.Text = "Jane Doe";
             // 
             // label3
             // 
@@ -267,29 +269,41 @@
             this.label1.TabIndex = 12;
             this.label1.Text = "Employee Name:";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::LotusLabsTimeTracker.Properties.Resources.Lotus_Labs__Transparent__04_17_2018;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(297, 84);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 31;
+            this.pictureBox1.TabStop = false;
+            // 
             // ProductionModule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(486, 703);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label12);
+            this.Controls.Add(this.btn_prodReport);
+            this.Controls.Add(this.btn_prodConfirm);
+            this.Controls.Add(this.btn_prodCancel);
+            this.Controls.Add(this.btn_prodStart);
+            this.Controls.Add(this.lbl_elapsedTime);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_prodDetails);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbo_prodWorkType);
+            this.Controls.Add(this.cbo_prodProjType);
+            this.Controls.Add(this.cbo_prodTaskType);
             this.Name = "ProductionModule";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -297,25 +311,26 @@
 
         #endregion
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbo_prodTaskType;
+        private System.Windows.Forms.ComboBox cbo_prodProjType;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cbo_prodWorkType;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_prodDetails;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label lbl_elapsedTime;
+        private System.Windows.Forms.Button btn_prodStart;
+        private System.Windows.Forms.Button btn_prodCancel;
+        private System.Windows.Forms.Button btn_prodConfirm;
+        private System.Windows.Forms.Button btn_prodReport;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbl_currentDate;
+        private System.Windows.Forms.Label lbl_empNo;
+        private System.Windows.Forms.Label lbl_empName;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

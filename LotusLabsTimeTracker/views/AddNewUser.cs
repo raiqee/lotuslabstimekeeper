@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace LotusLabsTimeTracker.views
 {
-    public partial class AddNewUser : Form
+    public partial class addEditUser : Form
     {
-        public AddNewUser()
+        public addEditUser()
         {
             InitializeComponent();
         }

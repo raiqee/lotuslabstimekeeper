@@ -16,5 +16,10 @@ namespace LotusLabsTimeTracker.views
         {
             InitializeComponent();
         }
+
+        private void btn_prodModule_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
