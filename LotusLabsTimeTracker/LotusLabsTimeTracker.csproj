@@ -106,6 +106,18 @@
     <Compile Include="views\FiledPMEF.Designer.cs">
       <DependentUpon>FiledPMEF.cs</DependentUpon>
     </Compile>
+    <Compile Include="views\FIledLeaveForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\FIledLeaveForm.Designer.cs">
+      <DependentUpon>FIledLeaveForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\LeaveForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\LeaveForm.Designer.cs">
+      <DependentUpon>LeaveForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\PMEF.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,8 +200,14 @@
     <EmbeddedResource Include="views\AddNewUser.resx">
       <DependentUpon>AddNewUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="views\FIledLeaveForm.resx">
+      <DependentUpon>FIledLeaveForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="views\FiledPMEF.resx">
       <DependentUpon>FiledPMEF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\LeaveForm.resx">
+      <DependentUpon>LeaveForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\PMEF.resx">
       <DependentUpon>PMEF.cs</DependentUpon>
@@ -275,6 +293,7 @@
     <Content Include="model\Module.hbm.xml">
       <SubType>Designer</SubType>
     </Content>
+    <None Include="Resources\LogOut.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

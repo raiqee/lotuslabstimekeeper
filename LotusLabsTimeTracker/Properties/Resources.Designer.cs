@@ -73,6 +73,16 @@ namespace LotusLabsTimeTracker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap LogOut {
+            get {
+                object obj = ResourceManager.GetObject("LogOut", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Lotus_Labs__Transparent__04_17_2018 {
             get {
                 object obj = ResourceManager.GetObject("Lotus Labs (Transparent) 04.17.2018", resourceCulture);

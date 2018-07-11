@@ -28,52 +28,59 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.btn_pmef = new System.Windows.Forms.Button();
-            this.btn_prodModule = new System.Windows.Forms.Button();
+            this.btn_workType = new System.Windows.Forms.Button();
+            this.btn_projectType = new System.Windows.Forms.Button();
+            this.btn_taskType = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // btn_workType
             // 
-            this.button1.Image = global::LotusLabsTimeTracker.Properties.Resources.Work_Type;
-            this.button1.Location = new System.Drawing.Point(366, 27);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(128, 115);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Work Type";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_workType.Image = global::LotusLabsTimeTracker.Properties.Resources.Work_Type;
+            this.btn_workType.Location = new System.Drawing.Point(274, 22);
+            this.btn_workType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_workType.Name = "btn_workType";
+            this.btn_workType.Size = new System.Drawing.Size(100, 115);
+            this.btn_workType.TabIndex = 7;
+            this.btn_workType.Text = "Work Type";
+            this.btn_workType.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btn_workType.UseVisualStyleBackColor = true;
+            this.btn_workType.Click += new System.EventHandler(this.btn_workType_Click);
             // 
-            // btn_pmef
+            // btn_projectType
             // 
-            this.btn_pmef.Image = global::LotusLabsTimeTracker.Properties.Resources.Project_Type;
-            this.btn_pmef.Location = new System.Drawing.Point(203, 27);
-            this.btn_pmef.Name = "btn_pmef";
-            this.btn_pmef.Size = new System.Drawing.Size(128, 115);
-            this.btn_pmef.TabIndex = 6;
-            this.btn_pmef.Text = "Project Type";
-            this.btn_pmef.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btn_pmef.UseVisualStyleBackColor = true;
+            this.btn_projectType.Image = global::LotusLabsTimeTracker.Properties.Resources.Project_Type;
+            this.btn_projectType.Location = new System.Drawing.Point(152, 22);
+            this.btn_projectType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_projectType.Name = "btn_projectType";
+            this.btn_projectType.Size = new System.Drawing.Size(103, 115);
+            this.btn_projectType.TabIndex = 6;
+            this.btn_projectType.Text = "Project Type";
+            this.btn_projectType.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btn_projectType.UseVisualStyleBackColor = true;
+            this.btn_projectType.Click += new System.EventHandler(this.btn_projectType_Click);
             // 
-            // btn_prodModule
+            // btn_taskType
             // 
-            this.btn_prodModule.Image = global::LotusLabsTimeTracker.Properties.Resources.Task_Type;
-            this.btn_prodModule.Location = new System.Drawing.Point(36, 27);
-            this.btn_prodModule.Name = "btn_prodModule";
-            this.btn_prodModule.Size = new System.Drawing.Size(128, 115);
-            this.btn_prodModule.TabIndex = 5;
-            this.btn_prodModule.Text = "Task Type";
-            this.btn_prodModule.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btn_prodModule.UseVisualStyleBackColor = true;
+            this.btn_taskType.Image = global::LotusLabsTimeTracker.Properties.Resources.Task_Type;
+            this.btn_taskType.Location = new System.Drawing.Point(27, 22);
+            this.btn_taskType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_taskType.Name = "btn_taskType";
+            this.btn_taskType.Size = new System.Drawing.Size(103, 115);
+            this.btn_taskType.TabIndex = 5;
+            this.btn_taskType.Text = "Task Type";
+            this.btn_taskType.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btn_taskType.UseVisualStyleBackColor = true;
+            this.btn_taskType.Click += new System.EventHandler(this.btn_taskType_Click);
             // 
             // TaskManager
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(534, 166);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btn_pmef);
-            this.Controls.Add(this.btn_prodModule);
+            this.ClientSize = new System.Drawing.Size(405, 148);
+            this.Controls.Add(this.btn_workType);
+            this.Controls.Add(this.btn_projectType);
+            this.Controls.Add(this.btn_taskType);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "TaskManager";
             this.Text = "Task Manager";
             this.ResumeLayout(false);
@@ -82,8 +89,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btn_pmef;
-        private System.Windows.Forms.Button btn_prodModule;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_projectType;
+        private System.Windows.Forms.Button btn_taskType;
+        private System.Windows.Forms.Button btn_workType;
     }
 }

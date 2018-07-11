@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace LotusLabsTimeTracker.views
 {
-    public partial class addNewUser : Form
+    public partial class FIledLeaveForm : Form
     {
-        public addNewUser()
+        public FIledLeaveForm()
         {
             InitializeComponent();
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
