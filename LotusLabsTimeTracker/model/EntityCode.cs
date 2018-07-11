@@ -8,10 +8,10 @@ namespace LotusLabsTimeTracker.model
 {
     class EntityCode : EntityHistory
     {
-        public String code { get; set; }
-        public String name { get; set; }
-        public String description { get; set; }
-        public Boolean activeFlag { get; set;  }
+        public virtual String code { get; set; }
+        public virtual String name { get; set; }
+        public virtual String description { get; set; }
+        public virtual Boolean activeFlag { get; set;  }
 
     }
 }

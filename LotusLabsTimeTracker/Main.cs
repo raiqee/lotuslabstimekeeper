@@ -7,39 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LotusLabsTimeTracker.controllers;
 
 namespace LotusLabsTimeTracker
 {
     public partial class Main : Form
     {
+        UserController controller = new UserController();
         public Main()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
+            Console.WriteLine(sender);
+            Console.WriteLine(e);
+            controller.viewSampleData();
         }
     }
 }

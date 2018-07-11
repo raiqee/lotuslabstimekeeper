@@ -301,6 +301,7 @@
             this.Controls.Add(this.cbo_prodProjType);
             this.Controls.Add(this.cbo_prodTaskType);
             this.Name = "ProductionModule";
+            this.Load += new System.EventHandler(this.ProductionModule_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

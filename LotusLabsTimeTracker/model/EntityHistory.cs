@@ -9,9 +9,9 @@ namespace LotusLabsTimeTracker.model
     [Serializable]
     class EntityHistory
     {
-        public long createdBy { get; set; }
-        public DateTime createdDate { get; set; }
-        public long updatedBy { get; set; }
-        public DateTime updatedDate { get; set; }
+        public virtual long createdBy { get; set; }
+        public virtual DateTime createdDate { get; set; }
+        public virtual long updatedBy { get; set; }
+        public virtual DateTime updatedDate { get; set; }
     }
 }
