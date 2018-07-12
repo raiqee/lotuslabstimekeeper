@@ -18,8 +18,9 @@ namespace LotusLabsTimeTracker.services
 
         public HibernateSessionFactory()
         {
-            myConfiguration = new Configuration();
-            myConfiguration.Configure("hibernate.cfg.xml");
+            myConfiguration = new Configuration().Configure()
+                .AddFile("models/Module.hbm.xml") 
+                .AddFile("models/Usertype.hbm.xml");
             mySessionFactory = myConfiguration.BuildSessionFactory();
             mySession = mySessionFactory.OpenSession();
         }

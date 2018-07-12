@@ -9,16 +9,16 @@ using LotusLabsTimeTracker.services;
 
 namespace LotusLabsTimeTracker.controllers
 {
-    public class UserController
+    class UserController
     {
-        public UserController() {
-
+        private LookupBean lookupBean;
+        public UserController()
+        {
+            lookupBean = new LookupBean();
         }
 
-        public void viewSampleData() {
-            ModuleBean bean = new ModuleBean();
-            IList<Module> modules = bean.GetModuleList();
-            Console.WriteLine(modules);
+        public IList<UserType> getUserTypes() {
+            return lookupBean.getUserTypes();
         }
     }
 }

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="LotusLabsTimeTracker.model" assembly="LotusLabsTimeTracker">
+  <class name="UserType" table="usertype">
+    <id name="id" column="id">
+      <generator class="identity"/>
+    </id>
+    <property name="code" column="code" />
+    <property name="name" column="name"/>
+    <property name="description" column="description"/>
+    <property name="createdBy" column="createdBy"/>
+    <property name="createdDate" column="createdDate"/>
+    <property name="updatedBy" column="updatedBy"/>
+    <property name="updatedDate" column="updatedDate"/>
+  </class>
+</hibernate-mapping>

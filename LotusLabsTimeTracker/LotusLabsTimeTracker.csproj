@@ -93,6 +93,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="services\HibernateSessionFactory.cs" />
+    <Compile Include="services\LookupBean.cs" />
     <Compile Include="services\ModuleBean.cs" />
     <Compile Include="views\AddNewUser.cs">
       <SubType>Form</SubType>
@@ -270,11 +271,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Work Type.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="model\Module.hbm.xml">
-      <SubType>Designer</SubType>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
