@@ -20,7 +20,7 @@ namespace LotusLabsTimeTracker
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_logIn_Click(object sender, EventArgs e)
         {
             String username = this.txt_username.Text;
             String password = this.txt_password.Text;

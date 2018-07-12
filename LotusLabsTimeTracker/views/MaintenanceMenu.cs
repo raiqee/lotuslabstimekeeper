@@ -17,9 +17,18 @@ namespace LotusLabsTimeTracker.views
             InitializeComponent();
         }
 
-        private void btn_prodModule_Click(object sender, EventArgs e)
+        private void btn_prodMgr_Click(object sender, EventArgs e)
         {
+            ProfileManager profileMgr = new ProfileManager();
+            profileMgr.Show();
+            this.Hide();
+        }
 
+        private void btn_taskMgr_Click(object sender, EventArgs e)
+        {
+            TaskManager taskMgr = new TaskManager();
+            taskMgr.Show();
+            this.Hide();
         }
     }
 }

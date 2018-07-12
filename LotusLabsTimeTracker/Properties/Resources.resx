@@ -121,31 +121,34 @@
   <data name="ProjectManager1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ProjectManager1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="LeaveForm" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LeaveForm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Lotus Labs (Transparent) 04.17.2018" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Lotus Labs (Transparent) 04.17.2018.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Project Type" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Project Type.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="TaskManager2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TaskManager2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="PMEF" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PMEF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Work Type" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Work Type.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LeaveForm" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LeaveForm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Maintenance" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Maintenance.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ProductionModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ProductionModule.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Lotus Labs (Transparent) 04.17.2018" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Lotus Labs (Transparent) 04.17.2018.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Task Type" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Task Type.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="TaskManager2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\TaskManager2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ProductionModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ProductionModule.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Work Type" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Work Type.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="LogOut" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LogOut.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

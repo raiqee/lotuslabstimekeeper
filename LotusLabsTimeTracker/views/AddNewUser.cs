@@ -12,9 +12,9 @@ using LotusLabsTimeTracker.model;
 
 namespace LotusLabsTimeTracker.views
 {
-    public partial class addEditUser : Form
+    public partial class addNewUser : Form
     {
-        public addEditUser()
+        public addNewUser()
         {
             InitializeComponent();
         }

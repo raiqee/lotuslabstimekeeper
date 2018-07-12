@@ -10,11 +10,25 @@ using System.Windows.Forms;
 
 namespace LotusLabsTimeTracker.views
 {
-    public partial class Profile_Manager : Form
+    public partial class ProfileManager : Form
     {
-        public Profile_Manager()
+        public ProfileManager()
         {
             InitializeComponent();
+        }
+
+        private void lnk_addNewEmployee_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            addNewUser newUser = new addNewUser();
+            newUser.Show();
+            this.Hide();
+        }
+
+        private void btn_editUser_Click(object sender, EventArgs e)
+        {
+            EditUser editUser = new EditUser();
+            editUser.Show();
+            this.Hide();
         }
     }
 }
