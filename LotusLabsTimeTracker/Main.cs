@@ -53,9 +53,10 @@ namespace LotusLabsTimeTracker
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            addEditUser addEditUser = new addEditUser();
+
+            addNewUser addNewUser = new addNewUser();
             this.Hide();
-            addEditUser.ShowDialog();
+            addNewUser.ShowDialog();
         }
     }
 }

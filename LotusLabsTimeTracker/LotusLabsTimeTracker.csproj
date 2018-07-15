@@ -290,14 +290,11 @@
   <ItemGroup>
     <None Include="Resources\Work Type.png" />
   </ItemGroup>
-<<<<<<< HEAD
-=======
   <ItemGroup>
     <Content Include="model\Module.hbm.xml">
       <SubType>Designer</SubType>
     </Content>
     <None Include="Resources\LogOut.png" />
   </ItemGroup>
->>>>>>> develop
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
