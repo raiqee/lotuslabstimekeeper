@@ -13,6 +13,7 @@ namespace LotusLabsTimeTracker.views
 {
     public partial class MainMenu : Form
     {
+        private Main _main;
         private Users currentSessionUser;
         
         public MainMenu()
@@ -20,9 +21,16 @@ namespace LotusLabsTimeTracker.views
             InitializeComponent();
         }
 
+        public MainMenu(Main main)
+        {
+            InitializeComponent();
+            this._main = main;
+        }
+
         private void btn_prodModule_Click(object sender, EventArgs e)
         {
-            ProductionModule production = new ProductionModule();
+            ProductionModule production = new ProductionModule(this);
+            production.setCurrentSessionUser(this.currentSessionUser);
             production.Show();
             this.Hide();
         }
@@ -50,8 +58,7 @@ namespace LotusLabsTimeTracker.views
 
         private void btn_logOut_Click(object sender, EventArgs e)
         {
-            Main logIn = new Main();
-            logIn.Show();
+            this._main.Show();
             this.Close();
         }
 

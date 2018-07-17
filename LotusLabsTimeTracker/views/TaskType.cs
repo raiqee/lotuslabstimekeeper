@@ -16,5 +16,10 @@ namespace LotusLabsTimeTracker.views
         {
             InitializeComponent();
         }
+
+        private void TaskType_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

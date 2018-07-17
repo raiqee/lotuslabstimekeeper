@@ -58,16 +58,16 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(53, 219);
+            this.label7.Location = new System.Drawing.Point(53, 300);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(89, 17);
+            this.label7.Size = new System.Drawing.Size(48, 17);
             this.label7.TabIndex = 13;
-            this.label7.Text = "Task Type:";
+            this.label7.Text = "Task:";
             // 
             // cbo_prodTaskType
             // 
             this.cbo_prodTaskType.FormattingEnabled = true;
-            this.cbo_prodTaskType.Location = new System.Drawing.Point(173, 219);
+            this.cbo_prodTaskType.Location = new System.Drawing.Point(173, 300);
             this.cbo_prodTaskType.Name = "cbo_prodTaskType";
             this.cbo_prodTaskType.Size = new System.Drawing.Size(248, 24);
             this.cbo_prodTaskType.TabIndex = 12;
@@ -86,14 +86,14 @@
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(53, 260);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(105, 17);
+            this.label8.Size = new System.Drawing.Size(64, 17);
             this.label8.TabIndex = 13;
-            this.label8.Text = "Project Type:";
+            this.label8.Text = "Project:";
             // 
             // cbo_prodWorkType
             // 
             this.cbo_prodWorkType.FormattingEnabled = true;
-            this.cbo_prodWorkType.Location = new System.Drawing.Point(173, 302);
+            this.cbo_prodWorkType.Location = new System.Drawing.Point(173, 220);
             this.cbo_prodWorkType.Name = "cbo_prodWorkType";
             this.cbo_prodWorkType.Size = new System.Drawing.Size(248, 24);
             this.cbo_prodWorkType.TabIndex = 12;
@@ -102,7 +102,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(53, 302);
+            this.label9.Location = new System.Drawing.Point(53, 220);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(91, 17);
             this.label9.TabIndex = 13;
@@ -301,6 +301,7 @@
             this.Controls.Add(this.cbo_prodProjType);
             this.Controls.Add(this.cbo_prodTaskType);
             this.Name = "ProductionModule";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ProductionModule_FormClosed);
             this.Load += new System.EventHandler(this.ProductionModule_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

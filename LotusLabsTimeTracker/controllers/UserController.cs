@@ -26,6 +26,7 @@ namespace LotusLabsTimeTracker.controllers
             user.createdDate = DateTime.Now;
             user.updatedBy = 0L;
             user.updatedDate = DateTime.Now;
+            user.activeFlag = true;
             getUserBean().saveUser(user);
         }
 
@@ -52,7 +53,7 @@ namespace LotusLabsTimeTracker.controllers
             if (!String.IsNullOrEmpty(username) && !String.IsNullOrEmpty(password)) {
                 String hashedPassword = generateHashPassword(password);
                 Users users = getUserBean().getUsersByUsername(username, hashedPassword);
-                if (users.id == 0)
+                if (users == null || users.id == 0)
                 {
                     errMessages.Add("Invalid EmployeeID/Password");
                 }

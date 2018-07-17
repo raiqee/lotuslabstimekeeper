@@ -11,7 +11,6 @@ namespace LotusLabsTimeTracker.model
         public virtual String code { get; set; }
         public virtual String name { get; set; }
         public virtual String description { get; set; }
-        public virtual Boolean activeFlag { get; set;  }
 
     }
 }

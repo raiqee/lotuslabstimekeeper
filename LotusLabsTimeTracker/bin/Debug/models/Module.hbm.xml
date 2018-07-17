@@ -7,6 +7,7 @@
     <property name="code" column="code" />
     <property name="name" column="name"/>
     <property name="description" column="description"/>
+    <property name="activeFlag" column="activeFlag"/>
     <property name="createdBy" column="createdBy"/>
     <property name="createdDate" column="createdDate"/>
     <property name="updatedBy" column="updatedBy"/>

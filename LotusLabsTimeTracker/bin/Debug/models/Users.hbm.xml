@@ -14,6 +14,7 @@
     <property name="last_login" column="last_login"/>
     <property name="invalid_login" column="invalid_login"/> 
     <property name="validated" column="validated"/>
+    <property name="activeFlag" column="activeFlag"/>
     <property name="createdBy" column="createdBy"/>
     <property name="createdDate" column="createdDate"/>
     <property name="updatedBy" column="updatedBy"/>

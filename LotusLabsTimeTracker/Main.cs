@@ -42,19 +42,19 @@ namespace LotusLabsTimeTracker
                 return;
             }
             Users user = getUserController().getUserDetails(username);
+            this.txt_username.Text = String.Empty;
+            this.txt_password.Text = String.Empty;
             if (!user.validated)
             {
                 ChangePassword changePassword = new ChangePassword(this);
                 this.Hide();
-                this.txt_username.Text = String.Empty;
-                this.txt_password.Text = String.Empty;
                 changePassword.setCurrentSessionUser(user);
                 changePassword.ShowDialog();
             }
             else {
-                views.MainMenu mainMenu = new views.MainMenu();
+                views.MainMenu mainMenu = new views.MainMenu(this);
+                this.Hide();
                 mainMenu.setCurrentSessionUser(user);
-                this.Close();
                 mainMenu.ShowDialog();
             }
         }

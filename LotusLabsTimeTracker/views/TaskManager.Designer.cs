@@ -36,10 +36,10 @@
             // btn_workType
             // 
             this.btn_workType.Image = global::LotusLabsTimeTracker.Properties.Resources.Work_Type;
-            this.btn_workType.Location = new System.Drawing.Point(274, 22);
-            this.btn_workType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_workType.Location = new System.Drawing.Point(48, 27);
+            this.btn_workType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_workType.Name = "btn_workType";
-            this.btn_workType.Size = new System.Drawing.Size(100, 115);
+            this.btn_workType.Size = new System.Drawing.Size(133, 142);
             this.btn_workType.TabIndex = 7;
             this.btn_workType.Text = "Work Type";
             this.btn_workType.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -49,10 +49,10 @@
             // btn_projectType
             // 
             this.btn_projectType.Image = global::LotusLabsTimeTracker.Properties.Resources.Project_Type;
-            this.btn_projectType.Location = new System.Drawing.Point(152, 22);
-            this.btn_projectType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_projectType.Location = new System.Drawing.Point(203, 27);
+            this.btn_projectType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_projectType.Name = "btn_projectType";
-            this.btn_projectType.Size = new System.Drawing.Size(103, 115);
+            this.btn_projectType.Size = new System.Drawing.Size(137, 142);
             this.btn_projectType.TabIndex = 6;
             this.btn_projectType.Text = "Project Type";
             this.btn_projectType.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -62,10 +62,10 @@
             // btn_taskType
             // 
             this.btn_taskType.Image = global::LotusLabsTimeTracker.Properties.Resources.Task_Type;
-            this.btn_taskType.Location = new System.Drawing.Point(27, 22);
-            this.btn_taskType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_taskType.Location = new System.Drawing.Point(360, 27);
+            this.btn_taskType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_taskType.Name = "btn_taskType";
-            this.btn_taskType.Size = new System.Drawing.Size(103, 115);
+            this.btn_taskType.Size = new System.Drawing.Size(137, 142);
             this.btn_taskType.TabIndex = 5;
             this.btn_taskType.Text = "Task Type";
             this.btn_taskType.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -74,13 +74,13 @@
             // 
             // TaskManager
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(405, 148);
+            this.ClientSize = new System.Drawing.Size(540, 182);
             this.Controls.Add(this.btn_workType);
             this.Controls.Add(this.btn_projectType);
             this.Controls.Add(this.btn_taskType);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "TaskManager";
             this.Text = "Task Manager";
             this.ResumeLayout(false);

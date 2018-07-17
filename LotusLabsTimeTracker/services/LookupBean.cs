@@ -17,5 +17,18 @@ namespace LotusLabsTimeTracker.services
             IList<UserType> userTypes = getMySession().QueryOver<UserType>().List();
             return userTypes;
         }
+
+        public IList<WorkType> getWorkTypes() {
+            IList<WorkType> workTypes = getMySession().QueryOver<WorkType>().List();
+            return workTypes;
+        }
+
+
+        //SAVES
+        public WorkType saveWorkType(WorkType workType) {
+            WorkType res = getMySession().Merge(workType);
+            getMySession().Transaction.Commit();
+            return res;
+        }
     }
 }
