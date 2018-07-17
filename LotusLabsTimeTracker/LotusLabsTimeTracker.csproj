@@ -95,12 +95,22 @@
     <Compile Include="services\HibernateSessionFactory.cs" />
     <Compile Include="services\LookupBean.cs" />
     <Compile Include="services\ModuleBean.cs" />
+    <Compile Include="services\UserBean.cs" />
+    <Compile Include="utilities\GlobalUtility.cs" />
+    <Compile Include="utilities\StringUtility.cs" />
     <Compile Include="views\AddNewUser.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="views\AddNewUser.Designer.cs">
       <DependentUpon>AddNewUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="views\ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\ChangePassword.Designer.cs">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\ComboBoxItem.cs" />
     <Compile Include="views\FiledPMEF.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +189,12 @@
     <Compile Include="views\TaskType.Designer.cs">
       <DependentUpon>TaskType.cs</DependentUpon>
     </Compile>
+    <Compile Include="views\UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="views\UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\WorkType.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,6 +216,9 @@
     </Compile>
     <EmbeddedResource Include="views\AddNewUser.resx">
       <DependentUpon>AddNewUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\ChangePassword.resx">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\FIledLeaveForm.resx">
       <DependentUpon>FIledLeaveForm.cs</DependentUpon>
@@ -259,7 +278,9 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Lotus Labs %28Transparent%29 04.17.2018.png" />
   </ItemGroup>
@@ -291,9 +312,6 @@
     <None Include="Resources\Work Type.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="model\Module.hbm.xml">
-      <SubType>Designer</SubType>
-    </Content>
     <None Include="Resources\LogOut.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

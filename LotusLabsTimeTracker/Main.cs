@@ -8,53 +8,60 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using LotusLabsTimeTracker.controllers;
+using LotusLabsTimeTracker.model;
+using LotusLabsTimeTracker.utilities;
 using LotusLabsTimeTracker.views;
 
 namespace LotusLabsTimeTracker
 {
     public partial class Main : Form
     {
-        UserController controller = new UserController();
         public Main()
         {
             InitializeComponent();
+        }
+
+        private UserController getUserController()
+        {
+            return new UserController();
+        }
+
+        private StringUtility getStringUtility()
+        {
+            return new StringUtility();
         }
 
         private void btn_logIn_Click(object sender, EventArgs e)
         {
             String username = this.txt_username.Text;
             String password = this.txt_password.Text;
-            List<String> errMessages = this.validateUser(username, password);
-            if (errMessages.Count>0) {
-                String concatinatedErrMessages = "";
-                foreach (String errMessage in errMessages) {
-                    concatinatedErrMessages += errMessage + "\n";
-                }
-                MessageBox.Show(concatinatedErrMessages);
+            List<String> errMessages = getUserController().validateUserLogin(username, password);
+            if (errMessages.Count > 0)
+            {
+                MessageBox.Show(getStringUtility().arrayToStringMessages(errMessages));
+                return;
+            }
+            Users user = getUserController().getUserDetails(username);
+            if (!user.validated)
+            {
+                ChangePassword changePassword = new ChangePassword(this);
+                this.Hide();
+                this.txt_username.Text = String.Empty;
+                this.txt_password.Text = String.Empty;
+                changePassword.setCurrentSessionUser(user);
+                changePassword.ShowDialog();
+            }
+            else {
+                views.MainMenu mainMenu = new views.MainMenu();
+                mainMenu.setCurrentSessionUser(user);
+                this.Close();
+                mainMenu.ShowDialog();
             }
         }
 
-        private List<String> validateUser(String username, String password) {
-            List<String> messages = new List<string>();
-            if (username == null){
-                messages.Add("Username is required");
-            }
-            else if (username.Trim().Equals("")) { 
-                messages.Add("Username is required"); 
-            }
-            if (password == null){
-                messages.Add("Password is required");
-            }
-            else if (username.Trim().Equals("")) {
-                messages.Add("Password is required");
-            }
-            return messages;
-        }
-
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
-            addNewUser addNewUser = new addNewUser();
+            addNewUser addNewUser = new addNewUser(this);
             this.Hide();
             addNewUser.ShowDialog();
         }

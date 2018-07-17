@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace LotusLabsTimeTracker.model
 {
     [Serializable]
-    class EntityHistory
+    public class EntityHistory
     {
         public virtual long createdBy { get; set; }
         public virtual DateTime createdDate { get; set; }

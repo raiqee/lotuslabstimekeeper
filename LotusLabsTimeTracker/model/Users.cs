@@ -6,15 +6,18 @@ using System.Threading.Tasks;
 
 namespace LotusLabsTimeTracker.model
 {
-    class Users : EntityHistory
+    public class Users : EntityHistory
     {
-        public long id { get; set; }
-        public String username { get; set; }
-        public String password { get; set; }
-        public String fullName { get; set; }
-        public DateTime birthdate { get; set; }
-        public UserType usertype { get; set; }
-        public int last_login { get; set; }
-        public int invalid_login { get; set; }
+        public virtual long id { get; set; }
+        public virtual String username { get; set; }
+        public virtual String password { get; set; }
+        public virtual String firstName { get; set; }
+        public virtual String lastName { get; set; }
+        public virtual String middleName { get; set; }
+        public virtual String email { get; set; }
+        public virtual UserType usertype { get; set; }
+        public virtual DateTime last_login { get; set; }
+        public virtual int invalid_login { get; set; }
+        public virtual Boolean validated { get; set; }
     }
 }

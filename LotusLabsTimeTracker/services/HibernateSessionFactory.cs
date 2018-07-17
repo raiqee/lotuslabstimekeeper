@@ -20,7 +20,8 @@ namespace LotusLabsTimeTracker.services
         {
             myConfiguration = new Configuration().Configure()
                 .AddFile("models/Module.hbm.xml") 
-                .AddFile("models/Usertype.hbm.xml");
+                .AddFile("models/Usertype.hbm.xml")
+                .AddFile("models/Users.hbm.xml");
             mySessionFactory = myConfiguration.BuildSessionFactory();
             mySession = mySessionFactory.OpenSession();
         }

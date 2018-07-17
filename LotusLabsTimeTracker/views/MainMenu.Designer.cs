@@ -40,10 +40,10 @@
             // btn_logOut
             // 
             this.btn_logOut.Image = global::LotusLabsTimeTracker.Properties.Resources.LogOut;
-            this.btn_logOut.Location = new System.Drawing.Point(524, 27);
-            this.btn_logOut.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_logOut.Location = new System.Drawing.Point(699, 33);
+            this.btn_logOut.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_logOut.Name = "btn_logOut";
-            this.btn_logOut.Size = new System.Drawing.Size(96, 93);
+            this.btn_logOut.Size = new System.Drawing.Size(128, 114);
             this.btn_logOut.TabIndex = 5;
             this.btn_logOut.Text = "Log Out";
             this.btn_logOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -53,10 +53,10 @@
             // btn_maintenance
             // 
             this.btn_maintenance.Image = global::LotusLabsTimeTracker.Properties.Resources.Maintenance;
-            this.btn_maintenance.Location = new System.Drawing.Point(402, 27);
-            this.btn_maintenance.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_maintenance.Location = new System.Drawing.Point(536, 33);
+            this.btn_maintenance.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_maintenance.Name = "btn_maintenance";
-            this.btn_maintenance.Size = new System.Drawing.Size(96, 93);
+            this.btn_maintenance.Size = new System.Drawing.Size(128, 114);
             this.btn_maintenance.TabIndex = 4;
             this.btn_maintenance.Text = "Maintenance";
             this.btn_maintenance.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -66,10 +66,10 @@
             // btn_leaveForm
             // 
             this.btn_leaveForm.Image = global::LotusLabsTimeTracker.Properties.Resources.LeaveForm;
-            this.btn_leaveForm.Location = new System.Drawing.Point(276, 27);
-            this.btn_leaveForm.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_leaveForm.Location = new System.Drawing.Point(368, 33);
+            this.btn_leaveForm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_leaveForm.Name = "btn_leaveForm";
-            this.btn_leaveForm.Size = new System.Drawing.Size(96, 93);
+            this.btn_leaveForm.Size = new System.Drawing.Size(128, 114);
             this.btn_leaveForm.TabIndex = 3;
             this.btn_leaveForm.Text = "Leave Form";
             this.btn_leaveForm.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -79,10 +79,10 @@
             // btn_pmef
             // 
             this.btn_pmef.Image = global::LotusLabsTimeTracker.Properties.Resources.PMEF;
-            this.btn_pmef.Location = new System.Drawing.Point(154, 27);
-            this.btn_pmef.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_pmef.Location = new System.Drawing.Point(205, 33);
+            this.btn_pmef.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_pmef.Name = "btn_pmef";
-            this.btn_pmef.Size = new System.Drawing.Size(96, 93);
+            this.btn_pmef.Size = new System.Drawing.Size(128, 114);
             this.btn_pmef.TabIndex = 2;
             this.btn_pmef.Text = "PMEF";
             this.btn_pmef.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -92,10 +92,10 @@
             // btn_prodModule
             // 
             this.btn_prodModule.Image = global::LotusLabsTimeTracker.Properties.Resources.ProductionModule;
-            this.btn_prodModule.Location = new System.Drawing.Point(32, 27);
-            this.btn_prodModule.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_prodModule.Location = new System.Drawing.Point(43, 33);
+            this.btn_prodModule.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_prodModule.Name = "btn_prodModule";
-            this.btn_prodModule.Size = new System.Drawing.Size(96, 93);
+            this.btn_prodModule.Size = new System.Drawing.Size(128, 114);
             this.btn_prodModule.TabIndex = 1;
             this.btn_prodModule.Text = "Production Module";
             this.btn_prodModule.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -105,28 +105,34 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::LotusLabsTimeTracker.Properties.Resources.Lotus_Labs__Transparent__04_17_2018;
-            this.pictureBox1.Location = new System.Drawing.Point(166, 146);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Location = new System.Drawing.Point(221, 180);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(299, 81);
+            this.pictureBox1.Size = new System.Drawing.Size(399, 100);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // MainMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(646, 238);
+            this.ClientSize = new System.Drawing.Size(861, 293);
+            this.ControlBox = false;
             this.Controls.Add(this.btn_logOut);
             this.Controls.Add(this.btn_maintenance);
             this.Controls.Add(this.btn_leaveForm);
             this.Controls.Add(this.btn_pmef);
             this.Controls.Add(this.btn_prodModule);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximumSize = new System.Drawing.Size(883, 344);
+            this.MinimumSize = new System.Drawing.Size(883, 344);
             this.Name = "MainMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main Menu";
+            this.Load += new System.EventHandler(this.MainMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 

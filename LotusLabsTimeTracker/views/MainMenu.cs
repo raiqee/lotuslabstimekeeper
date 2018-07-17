@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LotusLabsTimeTracker.model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,8 @@ namespace LotusLabsTimeTracker.views
 {
     public partial class MainMenu : Form
     {
+        private Users currentSessionUser;
+        
         public MainMenu()
         {
             InitializeComponent();
@@ -50,6 +53,21 @@ namespace LotusLabsTimeTracker.views
             Main logIn = new Main();
             logIn.Show();
             this.Close();
+        }
+
+        private void MainMenu_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        public Users getCurrentSessionUser()
+        {
+            return this.currentSessionUser;
+        }
+
+        public void setCurrentSessionUser(Users currentSessionUser)
+        {
+            this.currentSessionUser = currentSessionUser;
         }
     }
 }

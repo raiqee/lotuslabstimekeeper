@@ -44,7 +44,7 @@
             this.btn_logIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_logIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_logIn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_logIn.Location = new System.Drawing.Point(93, 247);
+            this.btn_logIn.Location = new System.Drawing.Point(66, 268);
             this.btn_logIn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_logIn.Name = "btn_logIn";
             this.btn_logIn.Size = new System.Drawing.Size(369, 68);
@@ -106,17 +106,18 @@
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(339, 228);
+            this.linkLabel1.Location = new System.Drawing.Point(339, 218);
             this.linkLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(122, 17);
             this.linkLabel1.TabIndex = 32;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Register new user";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked_1);
             // 
             // Main
             // 
+            this.AcceptButton = this.btn_logIn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(516, 380);
@@ -130,6 +131,8 @@
             this.HelpButton = true;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(534, 427);
+            this.MinimumSize = new System.Drawing.Size(534, 427);
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
