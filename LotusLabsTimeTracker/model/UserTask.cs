@@ -13,7 +13,6 @@ namespace LotusLabsTimeTracker.model
         public virtual DateTime startDateTime { get; set; }
         public virtual DateTime endDateTime { get; set; }
         public virtual Project project { get; set; }
-        public virtual Module module { get; set; }
         public virtual TaskType taskType { get; set; }
         public virtual WorkType workType { get; set; }
         public virtual Boolean billable { get; set; }

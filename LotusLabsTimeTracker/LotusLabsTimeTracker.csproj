@@ -311,5 +311,8 @@
   <ItemGroup>
     <None Include="Resources\LogOut.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="database\database.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

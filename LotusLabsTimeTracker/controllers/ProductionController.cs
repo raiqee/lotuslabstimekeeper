@@ -44,6 +44,10 @@ namespace LotusLabsTimeTracker.controllers
             return getUserTaskBean().saveUserTask(userTask);
         }
 
+        public UserTask getUserTask(long id) {
+            return getUserTaskBean().getUserTask(id);
+        }
+
         public UserTaskBean getUserTaskBean() {
             return new UserTaskBean();
         }

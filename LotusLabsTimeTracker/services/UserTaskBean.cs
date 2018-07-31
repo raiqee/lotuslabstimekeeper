@@ -20,5 +20,12 @@ namespace LotusLabsTimeTracker.services
             getMySession().Transaction.Commit();
             return res;
         }
+
+        public UserTask getUserTask(long id)
+        {
+            return getMySession().QueryOver<UserTask>()
+                .Where(x => x.id == id)
+                .SingleOrDefault();
+        }
     }
 }
