@@ -8,6 +8,6 @@ namespace LotusLabsTimeTracker.model
 {
     class TaskType : EntityCode
     {
-        public long id { get; set; }
+        public virtual long id { get; set; }
     }
 }

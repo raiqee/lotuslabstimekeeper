@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace LotusLabsTimeTracker.model
 {
-    class Project : EntityCode
+    public class Project : EntityCode
     {
-        public long id { get; set; }
+        public virtual long id { get; set; }
+        public virtual WorkType workType { get; set; }
     }
 }

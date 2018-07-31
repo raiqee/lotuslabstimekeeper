@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LotusLabsTimeTracker.model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,13 @@ namespace LotusLabsTimeTracker.views
 {
     public partial class MaintenanceMenu : Form
     {
-        public MaintenanceMenu()
+        private MainMenu _mainMenu;
+        private Users currentSessionUser;
+
+        public MaintenanceMenu(MainMenu mainMenu)
         {
             InitializeComponent();
+            _mainMenu = mainMenu;
         }
 
         private void btn_prodMgr_Click(object sender, EventArgs e)
@@ -26,9 +31,30 @@ namespace LotusLabsTimeTracker.views
 
         private void btn_taskMgr_Click(object sender, EventArgs e)
         {
-            TaskManager taskMgr = new TaskManager();
+            TaskManager taskMgr = new TaskManager(this);
+            taskMgr.setCurrentSessionUser(this.currentSessionUser);
             taskMgr.Show();
             this.Hide();
+        }
+
+        public Users getCurrentSessionUser()
+        {
+            return this.currentSessionUser;
+        }
+
+        public void setCurrentSessionUser(Users currentSessionUser)
+        {
+            this.currentSessionUser = currentSessionUser;
+        }
+
+        private void MaintenanceMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            _mainMenu.Show();
+        }
+
+        private void MaintenanceMenu_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

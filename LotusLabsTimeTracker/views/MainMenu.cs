@@ -51,7 +51,8 @@ namespace LotusLabsTimeTracker.views
 
         private void btn_maintenance_Click(object sender, EventArgs e)
         {
-            MaintenanceMenu mainteMenu = new MaintenanceMenu();
+            MaintenanceMenu mainteMenu = new MaintenanceMenu(this);
+            mainteMenu.setCurrentSessionUser(this.currentSessionUser);
             mainteMenu.Show();
             this.Hide();
         }

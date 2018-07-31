@@ -13,22 +13,116 @@ namespace LotusLabsTimeTracker.services
             this.getMySession().BeginTransaction();
         }
 
-        public IList<UserType> getUserTypes() {
-            IList<UserType> userTypes = getMySession().QueryOver<UserType>().List();
-            return userTypes;
+        public IList<UserType> getUserTypes(Boolean isActiveOnly)
+        {
+            if (isActiveOnly) {
+                return getMySession().QueryOver<UserType>()
+                    .Where(x => x.activeFlag == isActiveOnly)
+                    .List();
+            }
+            return getMySession().QueryOver<UserType>().List();
         }
 
-        public IList<WorkType> getWorkTypes() {
-            IList<WorkType> workTypes = getMySession().QueryOver<WorkType>().List();
-            return workTypes;
+        public IList<WorkType> getWorkTypes(Boolean isActiveOnly)
+        {
+            if (isActiveOnly) {
+                return getMySession().QueryOver<WorkType>()
+                    .Where(x => x.activeFlag == isActiveOnly)
+                    .List();
+            }
+            return getMySession().QueryOver<WorkType>().List();
         }
 
+        public IList<TaskType> getTaskTypes(Boolean isActiveOnly)
+        {
+            if (isActiveOnly){
+                return getMySession().QueryOver<TaskType>()
+                    .Where(x => x.activeFlag == isActiveOnly)
+                    .List();
+            }
+            return getMySession().QueryOver<TaskType>().List();
+        }
 
-        //SAVES
+        public IList<Project> getProjects(Boolean isActiveOnly)
+        {
+            if (isActiveOnly){
+                return getMySession().QueryOver<Project>()
+                    .Where(x => x.activeFlag == isActiveOnly)
+                    .List();
+            }
+            return getMySession().QueryOver<Project>().List();
+        }
+
+        public IList<Project> getProjectsByWorkType(Boolean isActiveOnly, WorkType workType)
+        {
+            if (isActiveOnly)
+            {
+                return getMySession().QueryOver<Project>()
+                    .Where(x => x.activeFlag == isActiveOnly && x.workType.id == workType.id)
+                    .List();
+            }
+            return getMySession().QueryOver<Project>()
+                .Where(x => x.workType.id == workType.id)
+                .List();
+        }
+
+        public WorkType getWorkType(String id)
+        {
+            return getMySession().QueryOver<WorkType>()
+                .Where(x => x.id == Int64.Parse(id))
+                .SingleOrDefault();
+        }
+
+        public Project getProject(String id)
+        {
+            return getMySession().QueryOver<Project>()
+                .Where(x => x.id == Int64.Parse(id))
+                .SingleOrDefault();
+        }
+
+        public TaskType getTaskType(String id)
+        {
+            return getMySession().QueryOver<TaskType>()
+                .Where(x => x.id == Int64.Parse(id))
+                .SingleOrDefault();
+        }
+
         public WorkType saveWorkType(WorkType workType) {
             WorkType res = getMySession().Merge(workType);
             getMySession().Transaction.Commit();
             return res;
+        }
+
+        public Project saveProject(Project project)
+        {
+            Project res = getMySession().Merge(project);
+            getMySession().Transaction.Commit();
+            return res;
+        }
+
+        public TaskType saveTaskType(TaskType taskType) {
+            TaskType res = getMySession().Merge(taskType);
+            getMySession().Transaction.Commit();
+            return res;
+        }
+
+        public void deleteWorkType(String id) {
+            WorkType workType = getWorkType(id);
+            getMySession().Delete(workType);
+            getMySession().Transaction.Commit();
+        }
+
+        public void deleteProject(String id)
+        {
+            Project workType = getProject(id);
+            getMySession().Delete(workType);
+            getMySession().Transaction.Commit();
+        }
+
+        public void deleteTaskType(String id) {
+            TaskType taskType = getTaskType(id);
+            getMySession().Delete(taskType);
+            getMySession().Transaction.Commit();
         }
     }
 }

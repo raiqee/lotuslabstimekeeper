@@ -81,8 +81,12 @@
             this.Controls.Add(this.btn_projectType);
             this.Controls.Add(this.btn_taskType);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximumSize = new System.Drawing.Size(558, 229);
+            this.MinimumSize = new System.Drawing.Size(558, 229);
             this.Name = "TaskManager";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Task Manager";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TaskManager_FormClosed);
             this.ResumeLayout(false);
 
         }

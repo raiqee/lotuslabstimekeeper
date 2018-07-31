@@ -75,6 +75,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="controllers\LookupController.cs" />
+    <Compile Include="controllers\ProductionController.cs" />
     <Compile Include="controllers\UserController.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
@@ -97,6 +98,7 @@
     <Compile Include="services\LookupBean.cs" />
     <Compile Include="services\ModuleBean.cs" />
     <Compile Include="services\UserBean.cs" />
+    <Compile Include="services\UserTaskBean.cs" />
     <Compile Include="utilities\GlobalUtility.cs" />
     <Compile Include="utilities\StringUtility.cs" />
     <Compile Include="views\AddNewUser.cs">
@@ -189,12 +191,6 @@
     </Compile>
     <Compile Include="views\TaskType.Designer.cs">
       <DependentUpon>TaskType.cs</DependentUpon>
-    </Compile>
-    <Compile Include="views\UserControl1.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="views\UserControl1.Designer.cs">
-      <DependentUpon>UserControl1.cs</DependentUpon>
     </Compile>
     <Compile Include="views\WorkType.cs">
       <SubType>Form</SubType>

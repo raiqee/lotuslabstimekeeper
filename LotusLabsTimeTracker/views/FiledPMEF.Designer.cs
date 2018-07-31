@@ -289,7 +289,10 @@
             this.Controls.Add(this.btn_approve);
             this.Controls.Add(this.grd_PMEF);
             this.Controls.Add(this.groupBox1);
+            this.MaximumSize = new System.Drawing.Size(959, 473);
+            this.MinimumSize = new System.Drawing.Size(959, 473);
             this.Name = "FiledPMEF";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PMEF";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

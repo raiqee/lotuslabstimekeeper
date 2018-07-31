@@ -50,6 +50,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.chkBillable = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -66,19 +68,21 @@
             // 
             // cbo_prodTaskType
             // 
+            this.cbo_prodTaskType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_prodTaskType.FormattingEnabled = true;
             this.cbo_prodTaskType.Location = new System.Drawing.Point(173, 300);
             this.cbo_prodTaskType.Name = "cbo_prodTaskType";
             this.cbo_prodTaskType.Size = new System.Drawing.Size(248, 24);
-            this.cbo_prodTaskType.TabIndex = 12;
+            this.cbo_prodTaskType.TabIndex = 3;
             // 
             // cbo_prodProjType
             // 
+            this.cbo_prodProjType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_prodProjType.FormattingEnabled = true;
             this.cbo_prodProjType.Location = new System.Drawing.Point(173, 260);
             this.cbo_prodProjType.Name = "cbo_prodProjType";
             this.cbo_prodProjType.Size = new System.Drawing.Size(248, 24);
-            this.cbo_prodProjType.TabIndex = 12;
+            this.cbo_prodProjType.TabIndex = 2;
             // 
             // label8
             // 
@@ -92,11 +96,13 @@
             // 
             // cbo_prodWorkType
             // 
+            this.cbo_prodWorkType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_prodWorkType.FormattingEnabled = true;
             this.cbo_prodWorkType.Location = new System.Drawing.Point(173, 220);
             this.cbo_prodWorkType.Name = "cbo_prodWorkType";
             this.cbo_prodWorkType.Size = new System.Drawing.Size(248, 24);
-            this.cbo_prodWorkType.TabIndex = 12;
+            this.cbo_prodWorkType.TabIndex = 1;
+            this.cbo_prodWorkType.SelectedIndexChanged += new System.EventHandler(this.cbo_prodWorkType_SelectedIndexChanged);
             // 
             // label9
             // 
@@ -114,7 +120,7 @@
             this.txt_prodDetails.Multiline = true;
             this.txt_prodDetails.Name = "txt_prodDetails";
             this.txt_prodDetails.Size = new System.Drawing.Size(409, 132);
-            this.txt_prodDetails.TabIndex = 15;
+            this.txt_prodDetails.TabIndex = 4;
             // 
             // label10
             // 
@@ -158,6 +164,7 @@
             this.btn_prodStart.TabIndex = 26;
             this.btn_prodStart.Text = "Start";
             this.btn_prodStart.UseVisualStyleBackColor = false;
+            this.btn_prodStart.Click += new System.EventHandler(this.btn_prodStart_Click);
             // 
             // btn_prodCancel
             // 
@@ -171,6 +178,7 @@
             this.btn_prodCancel.TabIndex = 27;
             this.btn_prodCancel.Text = "Cancel";
             this.btn_prodCancel.UseVisualStyleBackColor = false;
+            this.btn_prodCancel.Click += new System.EventHandler(this.btn_prodCancel_Click);
             // 
             // btn_prodConfirm
             // 
@@ -279,11 +287,32 @@
             this.pictureBox1.TabIndex = 31;
             this.pictureBox1.TabStop = false;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(53, 340);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(66, 17);
+            this.label4.TabIndex = 32;
+            this.label4.Text = "Billable:";
+            // 
+            // chkBillable
+            // 
+            this.chkBillable.AutoSize = true;
+            this.chkBillable.Location = new System.Drawing.Point(173, 335);
+            this.chkBillable.Name = "chkBillable";
+            this.chkBillable.Size = new System.Drawing.Size(18, 17);
+            this.chkBillable.TabIndex = 33;
+            this.chkBillable.UseVisualStyleBackColor = true;
+            // 
             // ProductionModule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(486, 703);
+            this.Controls.Add(this.chkBillable);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btn_prodReport);
@@ -300,7 +329,10 @@
             this.Controls.Add(this.cbo_prodWorkType);
             this.Controls.Add(this.cbo_prodProjType);
             this.Controls.Add(this.cbo_prodTaskType);
+            this.MaximumSize = new System.Drawing.Size(504, 750);
+            this.MinimumSize = new System.Drawing.Size(504, 750);
             this.Name = "ProductionModule";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ProductionModule_FormClosed);
             this.Load += new System.EventHandler(this.ProductionModule_Load);
             this.groupBox1.ResumeLayout(false);
@@ -334,5 +366,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.CheckBox chkBillable;
     }
 }

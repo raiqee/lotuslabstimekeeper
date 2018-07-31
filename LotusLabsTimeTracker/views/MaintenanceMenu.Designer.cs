@@ -35,10 +35,10 @@
             // btn_taskMgr
             // 
             this.btn_taskMgr.Image = global::LotusLabsTimeTracker.Properties.Resources.TaskManager2;
-            this.btn_taskMgr.Location = new System.Drawing.Point(160, 24);
-            this.btn_taskMgr.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_taskMgr.Location = new System.Drawing.Point(213, 30);
+            this.btn_taskMgr.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_taskMgr.Name = "btn_taskMgr";
-            this.btn_taskMgr.Size = new System.Drawing.Size(96, 93);
+            this.btn_taskMgr.Size = new System.Drawing.Size(128, 114);
             this.btn_taskMgr.TabIndex = 4;
             this.btn_taskMgr.Text = "Task Manager";
             this.btn_taskMgr.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -48,10 +48,10 @@
             // btn_prodMgr
             // 
             this.btn_prodMgr.Image = global::LotusLabsTimeTracker.Properties.Resources.ProjectManager1;
-            this.btn_prodMgr.Location = new System.Drawing.Point(38, 24);
-            this.btn_prodMgr.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_prodMgr.Location = new System.Drawing.Point(51, 30);
+            this.btn_prodMgr.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_prodMgr.Name = "btn_prodMgr";
-            this.btn_prodMgr.Size = new System.Drawing.Size(96, 93);
+            this.btn_prodMgr.Size = new System.Drawing.Size(128, 114);
             this.btn_prodMgr.TabIndex = 3;
             this.btn_prodMgr.Text = "Profile Manager";
             this.btn_prodMgr.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -60,14 +60,19 @@
             // 
             // MaintenanceMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(302, 152);
+            this.ClientSize = new System.Drawing.Size(403, 187);
             this.Controls.Add(this.btn_taskMgr);
             this.Controls.Add(this.btn_prodMgr);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximumSize = new System.Drawing.Size(421, 234);
+            this.MinimumSize = new System.Drawing.Size(421, 234);
             this.Name = "MaintenanceMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Maintenance";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MaintenanceMenu_FormClosed);
+            this.Load += new System.EventHandler(this.MaintenanceMenu_Load);
             this.ResumeLayout(false);
 
         }

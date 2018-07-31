@@ -16,7 +16,7 @@ namespace LotusLabsTimeTracker.controllers
         private static string defaultPassword = "password@1234";
 
         public IList<UserType> getUserTypes() {
-            return getLookupBean().getUserTypes();
+            return getLookupBean().getUserTypes(false);
         }
 
         public void createUser(Users user) { 
