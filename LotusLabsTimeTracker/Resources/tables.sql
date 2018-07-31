@@ -126,4 +126,16 @@ INSERT INTO UserType (code, name, description, createdBy, createdDate, updatedBy
 VALUES ('ADMIN', 'Admin', 'Account for Admins', 0, NOW(), 0, NOW());
 
 INSERT INTO user (username, password, first_name, middle_name, last_name, email, userType_id, last_Login, validated, invalid_login, activeFlag, createdBy, createdDate, updatedBy, updatedDate)
-VALUES ('admin', 'jiobvVncxw07G9Z+6LtihKDKhLSYg6q3okeotXGQmco=', 'Lotus', 'Labs', 'Admin', 'admin@admin.com', 4, '0001-01-01 00:00:00', 0, 0, 1, 0, NOW(), 0, NOW());
+VALUES ('MBO18056', 'jiobvVncxw07G9Z+6LtihKDKhLSYg6q3okeotXGQmco=', 'Milca', 'Belga', 'Oliveros', 'milca@admin.com', 2, '0001-01-01 00:00:00', 0, 0, 1, 0, NOW(), 0, NOW()),
+('MCL18057', 'jiobvVncxw07G9Z+6LtihKDKhLSYg6q3okeotXGQmco=', 'Michael', 'Campos', 'Lim', 'michael.lim@admin.com', 2, '0001-01-01 00:00:00', 0, 0, 1, 0, NOW(), 0, NOW()),
+('JFE18058', 'jiobvVncxw07G9Z+6LtihKDKhLSYg6q3okeotXGQmco=', 'Joy', 'Flores', 'Esquivel', 'joy@admin.com', 3, '0001-01-01 00:00:00', 0, 0, 1, 0, NOW(), 0, NOW()),
+('AFL18059', 'jiobvVncxw07G9Z+6LtihKDKhLSYg6q3okeotXGQmco=', 'Anna', 'Franco', 'Lucas', 'anna.lucas@admin.com', 2, '0001-01-01 00:00:00', 0, 0, 1, 0, NOW(), 0, NOW()),
+('MMG18060', 'jiobvVncxw07G9Z+6LtihKDKhLSYg6q3okeotXGQmco=', 'Maye', 'Medes', 'Gallardo', 'mae.gallardo@admin.com', 2, '0001-01-01 00:00:00', 0, 0, 1, 0, NOW(), 0, NOW()),
+('RCS18062', 'jiobvVncxw07G9Z+6LtihKDKhLSYg6q3okeotXGQmco=', 'Renaleen', 'Cayang', 'Sobere', 'renaleen.sobere@admin.com', 2, '0001-01-01 00:00:00', 0, 0, 1, 0, NOW(), 0, NOW()),
+('JBJ18064', 'jiobvVncxw07G9Z+6LtihKDKhLSYg6q3okeotXGQmco=', 'Jeoffrey', 'Benitez', 'Jalac', 'jeoffrey.jalac@admin.com', 1, '0001-01-01 00:00:00', 0, 0, 1, 0, NOW(), 0, NOW()),
+('JCC18066', 'jiobvVncxw07G9Z+6LtihKDKhLSYg6q3okeotXGQmco=', 'Jun', 'Cabatay', 'Comple', 'jun.comple@admin.com', 1, '0001-01-01 00:00:00', 0, 0, 1, 0, NOW(), 0, NOW()),
+('KPF18067', 'jiobvVncxw07G9Z+6LtihKDKhLSYg6q3okeotXGQmco=', 'Krizzle', 'Paneda', 'Fontanos', 'krizzle.fontanos@admin.com', 1, '0001-01-01 00:00:00', 0, 0, 1, 0, NOW(), 0, NOW()),
+('BCM18068', 'jiobvVncxw07G9Z+6LtihKDKhLSYg6q3okeotXGQmco=', 'Bea', 'Castro', 'Macalindong', 'bea.macalindong@admin.com', 1, '0001-01-01 00:00:00', 0, 0, 1, 0, NOW(), 0, NOW()),
+('DTR18069', 'jiobvVncxw07G9Z+6LtihKDKhLSYg6q3okeotXGQmco=', 'Don', 'Toledo', 'Reyes', 'don.reyes@admin.com', 2, '0001-01-01 00:00:00', 0, 0, 1, 0, NOW(), 0, NOW()),
+('RPS18074', 'jiobvVncxw07G9Z+6LtihKDKhLSYg6q3okeotXGQmco=', 'Roldan', 'Panuelos', 'Saldaña', 'roldan.saldana@admin.com', 1, '0001-01-01 00:00:00', 0, 0, 1, 0, NOW(), 0, NOW()),
+('admin', 'jiobvVncxw07G9Z+6LtihKDKhLSYg6q3okeotXGQmco=', 'Lotus', 'Labs', 'Admin', 'admin@admin.com', 4, '0001-01-01 00:00:00', 0, 0, 1, 0, NOW(), 0, NOW());
