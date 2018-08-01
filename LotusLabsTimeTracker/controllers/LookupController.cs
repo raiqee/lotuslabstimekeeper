@@ -19,6 +19,11 @@ namespace LotusLabsTimeTracker.controllers
             {
                 errMessages.Add("Work Type Code is required");
             }
+            else {
+                if (getLookupBean().isWorkTypeExistByCode(workType.code, workType.id)) {
+                    errMessages.Add("Work Type Code already exist");
+                }
+            }
 
             if (String.IsNullOrEmpty(workType.name))
             {
@@ -34,12 +39,18 @@ namespace LotusLabsTimeTracker.controllers
             {
                 errMessages.Add("Project Code is required");
             }
+            else {
+                if (getLookupBean().isProjectExistByCode(project.code, project.id))
+                {
+                    errMessages.Add("Project Code already exist");
+                }
+            }
 
             if (String.IsNullOrEmpty(project.name))
             {
                 errMessages.Add("Project Name is required");
             }
-            
+
             if (project.workType.id == 0)
             {
                 errMessages.Add("Work Type is required");
@@ -58,6 +69,12 @@ namespace LotusLabsTimeTracker.controllers
             if (String.IsNullOrEmpty(taskType.name))
             {
                 errMessages.Add("Task Type Code is required");
+            }
+            else {
+                if (getLookupBean().isTaskTypeExistByCode(taskType.code, taskType.id))
+                {
+                    errMessages.Add("Task Type Code already exist");
+                }
             }
             return errMessages;
         }
@@ -137,15 +154,15 @@ namespace LotusLabsTimeTracker.controllers
             dataTable.Columns.Add("ID");
             dataTable.Columns.Add("Code");
             dataTable.Columns.Add("Name");
-            dataTable.Columns.Add("Is Active?");
-            
+            dataTable.Columns.Add(new DataColumn("Status", typeof(bool)));
+
             if (getWorkTypes(false).Count > 0) {
                 foreach(WorkType workType in getWorkTypes(false))
                 {
                     dataTable.Rows.Add(new object[] { workType.id,
                                                       workType.code,
                                                       workType.name,
-                                                     workType.activeFlag
+                                                      workType.activeFlag
                     });
                 }
             }
@@ -158,7 +175,7 @@ namespace LotusLabsTimeTracker.controllers
             dataTable.Columns.Add("Code");
             dataTable.Columns.Add("Name");
             dataTable.Columns.Add("Work Type");
-            dataTable.Columns.Add("Is Active?");
+            dataTable.Columns.Add(new DataColumn("Status", typeof(bool)));
 
             if (getProjects(false).Count > 0) {
                 foreach (Project project in getProjects(false)){
@@ -179,7 +196,7 @@ namespace LotusLabsTimeTracker.controllers
             dataTable.Columns.Add("ID");
             dataTable.Columns.Add("Code");
             dataTable.Columns.Add("Name");
-            dataTable.Columns.Add("Is Active?");
+            dataTable.Columns.Add(new DataColumn("Status", typeof(bool)));
 
             if (getTaskTypes(false).Count > 0)
             {

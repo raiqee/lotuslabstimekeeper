@@ -18,7 +18,6 @@ namespace LotusLabsTimeTracker.views
         private TaskManager _taskManager;
         private Users currentSessionUser;
         private Boolean isEditMode = false;
-        private Boolean isActiveFlag = true;
         private long tempId = 0L;
 
         public TaskType(TaskManager taskManager)
@@ -39,28 +38,22 @@ namespace LotusLabsTimeTracker.views
         }
 
         private void TaskType_Load(object sender, EventArgs e)
-        { 
-            refreshData();
-            DataGridViewButtonColumn editColumn = new DataGridViewButtonColumn();
-            editColumn.Name = "Edit Column";
-            editColumn.Text = "Click";
-            editColumn.Width = 100;
-            editColumn.UseColumnTextForButtonValue = true;
+        {
+            var editIcon = new Bitmap(LotusLabsTimeTracker.Properties.Resources.edit, 8, 8);
 
-            if (dataGridView1.Columns["Edit Column"] == null)
+            refreshData();
+
+            DataGridViewImageColumn editColumn = new DataGridViewImageColumn();
+            editColumn.Name = "Edit";
+            editColumn.Image = editIcon;
+            editColumn.Width = 50;
+            editColumn.MinimumWidth = 50;
+            editColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+
+
+            if (dataGridView1.Columns["Edit"] == null)
             {
                 dataGridView1.Columns.Insert(4, editColumn);
-            }
-
-            DataGridViewButtonColumn deleteColumn = new DataGridViewButtonColumn();
-            deleteColumn.Name = "Deactivate";
-            deleteColumn.Text = "Click";
-            editColumn.Width = 100;
-            deleteColumn.UseColumnTextForButtonValue = true;
-
-            if (dataGridView1.Columns["Deactivate"] == null)
-            {
-                dataGridView1.Columns.Insert(5, deleteColumn);
             }
         }
 
@@ -88,7 +81,7 @@ namespace LotusLabsTimeTracker.views
             }
             taskType.code = txtTaskTypeCode.Text;
             taskType.name = txtTaskTypeName.Text;
-            taskType.activeFlag = isActiveFlag;
+            taskType.activeFlag = chkActive.Checked;
 
             List<String> errMessages = getLookupController().validateTaskType(taskType);
             if (errMessages.Count > 0)
@@ -100,12 +93,12 @@ namespace LotusLabsTimeTracker.views
             if (taskType != null && taskType.id != 0)
             {
                 refreshData();
+                txtTaskTypeCode.ReadOnly = false;
                 txtTaskTypeCode.Text = String.Empty;
                 txtTaskTypeName.Text = String.Empty;
                 MessageBox.Show("Task Type successfully saved");
                 tempId = 0L;
                 isEditMode = false;
-                isActiveFlag = true;
             }
         }
 
@@ -127,19 +120,21 @@ namespace LotusLabsTimeTracker.views
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == dataGridView1.Columns["Deactivate"].Index && e.RowIndex >= 0)
+            if (e.ColumnIndex == dataGridView1.Columns["Status"].Index && e.RowIndex >= 0)
             {
-                DialogResult dr = MessageBox.Show("Are you sure you want to delete this Task Type?", "Confirm", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
+                DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
+                bool status = bool.Parse(row.Cells["Status"].Value.ToString());
+                String statusStr = status ? "deactivate" : "activate";
+                DialogResult dr = MessageBox.Show("Are you sure you want to " + statusStr + " this Task Type?", "Confirm", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
                 if (dr == DialogResult.Yes)
                 {
-                    DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
                     model.TaskType taskType = getLookupController().getTaskType(row.Cells["ID"].Value.ToString());
-                    taskType.activeFlag = false;
+                    taskType.activeFlag = !status;
                     getLookupController().saveTaskType(taskType, false, currentSessionUser);
-                    MessageBox.Show("Task Type successfully deactivated");
+                    MessageBox.Show("Task Type successfully " + statusStr + "d");
                 }
             }
-            else if (e.ColumnIndex == dataGridView1.Columns["Edit Column"].Index && e.RowIndex >= 0)
+            else if (e.ColumnIndex == dataGridView1.Columns["Edit"].Index && e.RowIndex >= 0)
             {
                 DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
                 isEditMode = true;
@@ -148,6 +143,7 @@ namespace LotusLabsTimeTracker.views
                 txtTaskTypeCode.Text = taskType.code;
                 txtTaskTypeName.Text = taskType.name;
                 chkActive.Checked = taskType.activeFlag;
+                txtTaskTypeCode.ReadOnly = true;
             }
             refreshData();
         }

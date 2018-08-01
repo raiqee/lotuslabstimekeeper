@@ -87,6 +87,38 @@ namespace LotusLabsTimeTracker.services
                 .SingleOrDefault();
         }
 
+        public bool isWorkTypeExistByCode(String code, long id) {
+            bool isExist = false;
+            WorkType workType = getMySession().Query<WorkType>().Where(x => x.code.ToLower() == code.ToLower() && x.id != id).SingleOrDefault();
+            if (workType!=null&&workType.id != 0)
+            {
+                isExist = true;
+            }
+            return isExist;
+        }
+
+        public bool isProjectExistByCode(String code, long id)
+        {
+            bool isExist = false;
+            Project project = getMySession().Query<Project>().Where(x => x.code.ToLower() == code.ToLower() && x.id != id).SingleOrDefault();
+            if (project != null && project.id != 0)
+            {
+                isExist = true;
+            }
+            return isExist;
+        }
+
+        public bool isTaskTypeExistByCode(String code, long id)
+        {
+            bool isExist = false;
+            TaskType taskType = getMySession().Query<TaskType>().Where(x => x.code.ToLower() == code.ToLower() && x.id != id).SingleOrDefault();
+            if (taskType != null && taskType.id != 0)
+            {
+                isExist = true;
+            }
+            return isExist;
+        }
+
         public WorkType saveWorkType(WorkType workType) {
             WorkType res = getMySession().Merge(workType);
             getMySession().Transaction.Commit();

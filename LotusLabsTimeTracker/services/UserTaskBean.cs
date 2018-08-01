@@ -27,5 +27,12 @@ namespace LotusLabsTimeTracker.services
                 .Where(x => x.id == id)
                 .SingleOrDefault();
         }
+
+        public void deleteUserTask(long id)
+        {
+            UserTask userTask = getUserTask(id);
+            getMySession().Delete(userTask);
+            getMySession().Transaction.Commit();
+        }
     }
 }

@@ -15,7 +15,6 @@ namespace LotusLabsTimeTracker.views
 {
     public partial class ProjectType : Form
     {
-        private Boolean isActiveFlag = true;
         private Boolean isEditMode = false;
         private long tempId = 0L;
         private TaskManager _taskManager;
@@ -61,26 +60,19 @@ namespace LotusLabsTimeTracker.views
             }
 
             refreshData();
-            DataGridViewButtonColumn editColumn = new DataGridViewButtonColumn();
-            editColumn.Name = "Edit Column";
-            editColumn.Text = "Click";
-            editColumn.Width = 100;
-            editColumn.UseColumnTextForButtonValue = true;
 
-            if (dataGridView1.Columns["Edit Column"] == null)
+            var editIcon = new Bitmap(LotusLabsTimeTracker.Properties.Resources.edit, 8, 8);
+
+            DataGridViewImageColumn editColumn = new DataGridViewImageColumn();
+            editColumn.Name = "Edit";
+            editColumn.Image = editIcon;
+            editColumn.Width = 50;
+            editColumn.MinimumWidth = 50;
+            editColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+
+            if (dataGridView1.Columns["Edit"] == null)
             {
                 dataGridView1.Columns.Insert(5, editColumn);
-            }
-
-            DataGridViewButtonColumn deleteColumn = new DataGridViewButtonColumn();
-            deleteColumn.Name = "Deactivate";
-            deleteColumn.Text = "Click";
-            editColumn.Width = 100;
-            deleteColumn.UseColumnTextForButtonValue = true;
-
-            if (dataGridView1.Columns["Deactivate"] == null)
-            {
-                dataGridView1.Columns.Insert(6, deleteColumn);
             }
         }
 
@@ -97,11 +89,11 @@ namespace LotusLabsTimeTracker.views
             }
             project.code = txtProjectCode.Text;
             project.name = txtProjectName.Text;
+            project.activeFlag = chkActive.Checked;
 
             ComboBoxItem selectedItem = cbo_workType.SelectedItem as ComboBoxItem;
             project.workType = new model.WorkType();
             project.workType.id = selectedItem == null ? (long)0 : long.Parse(selectedItem.Value.ToString());
-            project.activeFlag = isActiveFlag;
 
             List<String> errMessages = getLookupController().validateProject(project);
             if (errMessages.Count > 0)
@@ -113,13 +105,13 @@ namespace LotusLabsTimeTracker.views
             if (project != null && project.id != 0)
             {
                 refreshData();
+                txtProjectCode.ReadOnly = false;
                 txtProjectCode.Text = String.Empty;
                 txtProjectName.Text = String.Empty;
                 cbo_workType.SelectedIndex = 0;
                 MessageBox.Show("Project successfully saved");
                 tempId = 0L;
                 isEditMode = false;
-                isActiveFlag = true;
             }
         }
 
@@ -139,24 +131,27 @@ namespace LotusLabsTimeTracker.views
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == dataGridView1.Columns["Deactivate"].Index && e.RowIndex >= 0)
+            if (e.ColumnIndex == dataGridView1.Columns["Status"].Index && e.RowIndex >= 0)
             {
-                DialogResult dr = MessageBox.Show("Are you sure you want to delete this Project?", "Confirm", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
+                DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
+                bool status = bool.Parse(row.Cells["Status"].Value.ToString());
+                String statusStr = status ? "deactivate" : "activate";
+                DialogResult dr = MessageBox.Show("Are you sure you want to " + statusStr + " this Project?", "Confirm", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
                 if (dr == DialogResult.Yes)
                 {
-                    DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
                     Project project = getLookupController().getProject(row.Cells["ID"].Value.ToString());
-                    project.activeFlag = false;
+                    project.activeFlag = !status;
                     getLookupController().saveProject(project, false, currentSessionUser);
-                    MessageBox.Show("Project successfully deactivated");
+                    MessageBox.Show("Project successfully " + statusStr + "d");
                 }
             }
-            else if (e.ColumnIndex == dataGridView1.Columns["Edit Column"].Index && e.RowIndex >= 0)
+            else if (e.ColumnIndex == dataGridView1.Columns["Edit"].Index && e.RowIndex >= 0)
             {
                 DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
                 isEditMode = true;
                 Project project = getLookupController().getProject(row.Cells["ID"].Value.ToString());
                 tempId = project.id;
+                txtProjectCode.ReadOnly = true;
                 txtProjectCode.Text = project.code;
                 txtProjectName.Text = project.name;
                 cbo_workType.SelectedIndex = cbo_workType.FindStringExact(project.workType.name);

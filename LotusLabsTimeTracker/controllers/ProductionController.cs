@@ -24,11 +24,6 @@ namespace LotusLabsTimeTracker.controllers
             if (userTask.taskType.id == 0) {
                 errMessages.Add("Task Type is required");
             }
-
-            if (String.IsNullOrEmpty(userTask.description))
-            {
-                errMessages.Add("Description is required");
-            }
             return errMessages;
         }
 
@@ -42,6 +37,10 @@ namespace LotusLabsTimeTracker.controllers
             userTask.updatedBy = user.id;
             userTask.updatedDate = DateTime.Now;
             return getUserTaskBean().saveUserTask(userTask);
+        }
+
+        public void deleteUserTask(long id) {
+            getUserTaskBean().deleteUserTask(id);
         }
 
         public UserTask getUserTask(long id) {

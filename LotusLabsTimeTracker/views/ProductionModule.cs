@@ -41,7 +41,7 @@ namespace LotusLabsTimeTracker.views
 
             lbl_empName.Text = currentSessionUser.firstName + " " + currentSessionUser.lastName;
             lbl_empNo.Text = currentSessionUser.username;
-            lbl_currentDate.Text = DateTime.Now.ToString();
+            lbl_currentDate.Text =  DateTime.Now.ToString("MM-dd-yyyy hh:mm tt");
 
             foreach (model.WorkType workType in getLookupController().getWorkTypes(true))
             {
@@ -59,41 +59,6 @@ namespace LotusLabsTimeTracker.views
                 cbo_prodTaskType.Items.Add(item);
             }
 
-        }
-
-        private UserController getUserController()
-        {
-            return new UserController();
-        }
-
-        private StringUtility getStringUtility()
-        {
-            return new StringUtility();
-        }
-
-        public Users getCurrentSessionUser()
-        {
-            return this.currentSessionUser;
-        }
-
-        public void setCurrentSessionUser(Users currentSessionUser)
-        {
-            this.currentSessionUser = currentSessionUser;
-        }
-
-        private void timer_Tick(object sender, EventArgs e)
-        {
-            lbl_currentDate.Text = DateTime.Now.ToString();
-        }
-
-        private void ProductionModule_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            _mainMenu.Show();
-        }
-
-        private LookupController getLookupController()
-        {
-            return new LookupController();
         }
 
         private void cbo_prodWorkType_SelectedIndexChanged(object sender, EventArgs e)
@@ -114,6 +79,17 @@ namespace LotusLabsTimeTracker.views
 
         private void btn_prodCancel_Click(object sender, EventArgs e)
         {
+            if (btn_prodStart.Enabled == false) {
+                DialogResult dr = MessageBox.Show("Are you sure you want to cancel this task?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (dr != DialogResult.Yes)
+                {
+                    return;
+                }
+                if (runningId != 0) {
+                    getProductionController().deleteUserTask(runningId);
+                    myTimer.Stop();
+                }
+            }
             _mainMenu.Show();
             this.Close();
         }
@@ -147,67 +123,46 @@ namespace LotusLabsTimeTracker.views
 
         private void btn_prodStart_Click(object sender, EventArgs e)
         {
-            if (btn_prodStart.Text == "Start")
+            UserTask userTask = new UserTask();
+
+            ComboBoxItem selectedWorkType = cbo_prodWorkType.SelectedItem as ComboBoxItem;
+            userTask.workType = new model.WorkType();
+            userTask.workType.id = selectedWorkType == null ? (long)0 : long.Parse(selectedWorkType.Value.ToString());
+
+            ComboBoxItem selectedProject = cbo_prodProjType.SelectedItem as ComboBoxItem;
+            userTask.project = new Project();
+            userTask.project.id = selectedProject == null ? (long)0 : long.Parse(selectedProject.Value.ToString());
+
+            ComboBoxItem selectedTaskType = cbo_prodTaskType.SelectedItem as ComboBoxItem;
+            userTask.taskType = new model.TaskType();
+            userTask.taskType.id = selectedTaskType == null ? (long)0 : long.Parse(selectedTaskType.Value.ToString());
+
+
+            List<String> errMessages = getProductionController().validateUserTask(userTask);
+            if (errMessages.Count > 0)
             {
-                UserTask userTask = new UserTask();
-
-                ComboBoxItem selectedWorkType = cbo_prodWorkType.SelectedItem as ComboBoxItem;
-                userTask.workType = new model.WorkType();
-                userTask.workType.id = selectedWorkType == null ? (long)0 : long.Parse(selectedWorkType.Value.ToString());
-
-                ComboBoxItem selectedProject = cbo_prodProjType.SelectedItem as ComboBoxItem;
-                userTask.project = new Project();
-                userTask.project.id = selectedProject == null ? (long)0 : long.Parse(selectedProject.Value.ToString());
-
-                ComboBoxItem selectedTaskType = cbo_prodTaskType.SelectedItem as ComboBoxItem;
-                userTask.taskType = new model.TaskType();
-                userTask.taskType.id = selectedTaskType == null ? (long)0 : long.Parse(selectedTaskType.Value.ToString());
-
-                userTask.description = txt_prodDetails.Text;
-
-                List<String> errMessages = getProductionController().validateUserTask(userTask);
-                if (errMessages.Count > 0)
-                {
-                    MessageBox.Show(getStringUtility().arrayToStringMessages(errMessages));
-                    return;
-                }
-                userTask.startDateTime = DateTime.Now;
-                userTask.billable = chkBillable.Checked;
-                userTask.user = this.currentSessionUser;
-                userTask.activeFlag = true;
-
-                UserTask result = getProductionController().saveUserTask(userTask, true, currentSessionUser);
-                if (result.id != 0) {
-                    btn_prodStart.Text = "Stop";
-                    myTimer = new Timer();
-                    myTimer.Interval = (1 * 1000); // 1 secs
-                    myTimer.Tick += new EventHandler(counter_Tick);
-                    myTimer.Start();
-                    MessageBox.Show("Timer successfully started");
-                    runningId = result.id;
-
-                }
+                MessageBox.Show(getStringUtility().arrayToStringMessages(errMessages));
+                return;
             }
-            else {
-                UserTask userTask = getProductionController().getUserTask(runningId);
-                userTask.endDateTime = DateTime.Now;
-                userTask.description = txt_prodDetails.Text;
-                UserTask result = getProductionController().saveUserTask(userTask, false, currentSessionUser);
-                if (result.id != 0) {
-                    myTimer.Stop();
-                    btn_prodStart.Text = "Start";
-                    MessageBox.Show("Timer successfully stopped");
-                }
-            }
+            userTask.startDateTime = DateTime.Now;
+            userTask.description = txt_prodDetails.Text;
+            userTask.user = this.currentSessionUser;
+            userTask.activeFlag = true;
 
-            cbo_prodProjType.Enabled = btn_prodStart.Text == "Start";
-            cbo_prodTaskType.Enabled = btn_prodStart.Text == "Start";
-            cbo_prodWorkType.Enabled = btn_prodStart.Text == "Start";
-
-            if (btn_prodStart.Text == "Start") {
-                clearFields();
+            UserTask result = getProductionController().saveUserTask(userTask, true, currentSessionUser);
+            if (result.id != 0)
+            {
+                myTimer = new Timer();
+                myTimer.Interval = (1 * 1000); // 1 secs
+                myTimer.Tick += new EventHandler(counter_Tick);
+                myTimer.Start();
+                runningId = result.id;
+                btn_prodConfirm.Enabled = true;
+                btn_prodStart.Enabled = false;
             }
-            
+            cbo_prodProjType.Enabled = false;
+            cbo_prodTaskType.Enabled = false;
+            cbo_prodWorkType.Enabled = false;
         }
 
         private void clearFields() {
@@ -219,10 +174,70 @@ namespace LotusLabsTimeTracker.views
             this.hours = 0;
             lbl_elapsedTime.Text = "00:00:00";
             txt_prodDetails.Text = String.Empty;
+            cbo_prodProjType.Items.Clear();
         }
 
         private ProductionController getProductionController() {
             return new ProductionController();
+        }
+
+        private void btn_prodConfirm_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Are you sure you want to save this task?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (dr != DialogResult.Yes)
+            {
+                return;
+            }
+            UserTask userTask = getProductionController().getUserTask(runningId);
+            userTask.endDateTime = DateTime.Now;
+            userTask.description = txt_prodDetails.Text;
+            UserTask result = getProductionController().saveUserTask(userTask, false, currentSessionUser);
+            if (result.id != 0)
+            {
+                myTimer.Stop();
+                MessageBox.Show("Task successfully saved");
+            }
+            cbo_prodProjType.Enabled = true;
+            cbo_prodTaskType.Enabled = true;
+            cbo_prodWorkType.Enabled = true;
+            btn_prodConfirm.Enabled = false;
+            btn_prodStart.Enabled = true;
+            clearFields();
+        }
+
+        private UserController getUserController()
+        {
+            return new UserController();
+        }
+
+        private StringUtility getStringUtility()
+        {
+            return new StringUtility();
+        }
+
+        public Users getCurrentSessionUser()
+        {
+            return this.currentSessionUser;
+        }
+
+        public void setCurrentSessionUser(Users currentSessionUser)
+        {
+            this.currentSessionUser = currentSessionUser;
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            lbl_currentDate.Text = DateTime.Now.ToString("MM-dd-yyyy hh:mm tt");
+        }
+
+        private void ProductionModule_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            _mainMenu.Show();
+        }
+
+        private LookupController getLookupController()
+        {
+            return new LookupController();
         }
     }
 }

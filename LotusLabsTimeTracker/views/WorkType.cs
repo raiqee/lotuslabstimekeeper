@@ -16,7 +16,6 @@ namespace LotusLabsTimeTracker.views
     public partial class WorkType : Form
     {
         private Boolean isEditMode = false;
-        private Boolean isActiveFlag = true;
         private long tempId = 0L;
         private TaskManager _taskManager;
         private Users currentSessionUser;
@@ -38,7 +37,7 @@ namespace LotusLabsTimeTracker.views
             }
             workType.code = txt_code.Text;
             workType.name = txt_name.Text;
-            workType.activeFlag = isActiveFlag;
+            workType.activeFlag = chkActive.Checked;
 
             List<String> errMessages = getLookupController().validateWorkType(workType);
             if (errMessages.Count > 0)
@@ -49,25 +48,27 @@ namespace LotusLabsTimeTracker.views
             workType = getLookupController().saveWorkType(workType, (!isEditMode?true:false), currentSessionUser);
             if (workType != null && workType.id != 0) {
                 refreshData();
+                txt_code.ReadOnly = false;
                 txt_code.Text = String.Empty;
                 txt_name.Text = String.Empty;
                 MessageBox.Show("Work Type successfully saved");
                 tempId = 0L;
                 isEditMode = false;
-                isActiveFlag = true;
             }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == dataGridView1.Columns["Status"].Index && e.RowIndex >= 0) {                
-                DialogResult dr = MessageBox.Show("Are you sure you want to deactivate this Work Type?", "Confirm", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
+            if (e.ColumnIndex == dataGridView1.Columns["Status"].Index && e.RowIndex >= 0) {
+                DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
+                bool status = bool.Parse(row.Cells["Status"].Value.ToString());
+                String statusStr = status ? "deactivate" : "activate";
+                DialogResult dr = MessageBox.Show("Are you sure you want to " + statusStr + " this Work Type?", "Confirm", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
                 if (dr == DialogResult.Yes) {
-                    DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
                     model.WorkType workType = getLookupController().getWorkType(row.Cells["ID"].Value.ToString());
-                    workType.activeFlag = false;
+                    workType.activeFlag = !status;
                     getLookupController().saveWorkType(workType, false, currentSessionUser);
-                    MessageBox.Show("Work Type successfully deactivated");
+                    MessageBox.Show("Work Type successfully " + statusStr + "d");
                 }
             } else if (e.ColumnIndex == dataGridView1.Columns["Edit"].Index && e.RowIndex >= 0) {
                 DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
@@ -77,6 +78,7 @@ namespace LotusLabsTimeTracker.views
                 txt_code.Text = workType.code;
                 txt_name.Text = workType.name;
                 chkActive.Checked = workType.activeFlag;
+                txt_code.ReadOnly = true;
             }
             refreshData();
         }
@@ -94,26 +96,17 @@ namespace LotusLabsTimeTracker.views
             var editIcon = new Bitmap(LotusLabsTimeTracker.Properties.Resources.edit,8,8);
         
             refreshData();
+
             DataGridViewImageColumn editColumn = new DataGridViewImageColumn();
             editColumn.Name = "Edit";
             editColumn.Image = editIcon;
-            editColumn.Width = 100;
-            //editColumn.UseColumnTextForButtonValue = true;
+            editColumn.Width = 50;
+            editColumn.MinimumWidth = 50;
+            editColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
 
             if (dataGridView1.Columns["Edit"] == null)
             {
                 dataGridView1.Columns.Insert(4, editColumn);
-            }
-
-            DataGridViewCheckBoxColumn status = new DataGridViewCheckBoxColumn();
-            status.Name = "Status";
-            //deleteColumn.Text = "Click";
-            editColumn.Width = 100;
-            //deleteColumn.UseColumnTextForButtonValue = true;
-
-            if (dataGridView1.Columns["Status"] == null)
-            {
-                dataGridView1.Columns.Insert(5, status);
             }
         }
 

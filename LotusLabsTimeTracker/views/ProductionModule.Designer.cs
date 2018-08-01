@@ -50,8 +50,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.chkBillable = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -183,6 +181,7 @@
             // btn_prodConfirm
             // 
             this.btn_prodConfirm.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btn_prodConfirm.Enabled = false;
             this.btn_prodConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_prodConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_prodConfirm.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -192,6 +191,7 @@
             this.btn_prodConfirm.TabIndex = 28;
             this.btn_prodConfirm.Text = "Confirm";
             this.btn_prodConfirm.UseVisualStyleBackColor = false;
+            this.btn_prodConfirm.Click += new System.EventHandler(this.btn_prodConfirm_Click);
             // 
             // btn_prodReport
             // 
@@ -287,32 +287,11 @@
             this.pictureBox1.TabIndex = 31;
             this.pictureBox1.TabStop = false;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(53, 340);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(66, 17);
-            this.label4.TabIndex = 32;
-            this.label4.Text = "Billable:";
-            // 
-            // chkBillable
-            // 
-            this.chkBillable.AutoSize = true;
-            this.chkBillable.Location = new System.Drawing.Point(173, 335);
-            this.chkBillable.Name = "chkBillable";
-            this.chkBillable.Size = new System.Drawing.Size(18, 17);
-            this.chkBillable.TabIndex = 33;
-            this.chkBillable.UseVisualStyleBackColor = true;
-            // 
             // ProductionModule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(486, 703);
-            this.Controls.Add(this.chkBillable);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btn_prodReport);
@@ -366,7 +345,5 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.CheckBox chkBillable;
     }
 }

@@ -83,6 +83,7 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="model\Constants.cs" />
     <Compile Include="model\EntityCode.cs" />
     <Compile Include="model\EntityHistory.cs" />
     <Compile Include="model\Module.cs" />
@@ -313,6 +314,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="database\database.txt" />
+    <Content Include="edit.png" />
+    <None Include="Resources\edit.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
