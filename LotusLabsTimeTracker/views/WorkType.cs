@@ -60,8 +60,8 @@ namespace LotusLabsTimeTracker.views
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == dataGridView1.Columns["Deactivate"].Index && e.RowIndex >= 0) {                
-                DialogResult dr = MessageBox.Show("Are you sure you want to delete this Work Type?", "Confirm", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
+            if (e.ColumnIndex == dataGridView1.Columns["Status"].Index && e.RowIndex >= 0) {                
+                DialogResult dr = MessageBox.Show("Are you sure you want to deactivate this Work Type?", "Confirm", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
                 if (dr == DialogResult.Yes) {
                     DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
                     model.WorkType workType = getLookupController().getWorkType(row.Cells["ID"].Value.ToString());
@@ -69,7 +69,7 @@ namespace LotusLabsTimeTracker.views
                     getLookupController().saveWorkType(workType, false, currentSessionUser);
                     MessageBox.Show("Work Type successfully deactivated");
                 }
-            } else if (e.ColumnIndex == dataGridView1.Columns["Edit Column"].Index && e.RowIndex >= 0) {
+            } else if (e.ColumnIndex == dataGridView1.Columns["Edit"].Index && e.RowIndex >= 0) {
                 DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
                 isEditMode = true;
                 model.WorkType workType = getLookupController().getWorkType(row.Cells["ID"].Value.ToString());
@@ -91,27 +91,28 @@ namespace LotusLabsTimeTracker.views
 
         private void WorkType_Load(object sender, EventArgs e)
         {
+            var editIcon = new Bitmap(LotusLabsTimeTracker.Properties.Resources.PMEF);
             refreshData();
-            DataGridViewButtonColumn editColumn = new DataGridViewButtonColumn();
-            editColumn.Name = "Edit Column";
-            editColumn.Text = "Click";
-            editColumn.Width = 100;
-            editColumn.UseColumnTextForButtonValue = true;
+            DataGridViewImageColumn editColumn = new DataGridViewImageColumn();
+            editColumn.Name = "Edit";
+            editColumn.Image = editIcon;
+            //editColumn.Width = 100;
+            //editColumn.UseColumnTextForButtonValue = true;
 
-            if (dataGridView1.Columns["Edit Column"] == null)
+            if (dataGridView1.Columns["Edit"] == null)
             {
                 dataGridView1.Columns.Insert(4, editColumn);
             }
 
-            DataGridViewButtonColumn deleteColumn = new DataGridViewButtonColumn();
-            deleteColumn.Name = "Deactivate";
-            deleteColumn.Text = "Click";
+            DataGridViewCheckBoxColumn status = new DataGridViewCheckBoxColumn();
+            status.Name = "Status";
+            //deleteColumn.Text = "Click";
             editColumn.Width = 100;
-            deleteColumn.UseColumnTextForButtonValue = true;
+            //deleteColumn.UseColumnTextForButtonValue = true;
 
-            if (dataGridView1.Columns["Deactivate"] == null)
+            if (dataGridView1.Columns["Status"] == null)
             {
-                dataGridView1.Columns.Insert(5, deleteColumn);
+                dataGridView1.Columns.Insert(5, status);
             }
         }
 

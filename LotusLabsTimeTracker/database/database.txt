@@ -119,14 +119,83 @@ CREATE TABLE UserTask (
 
 SELECT * FROM UserTask;
 
-INSERT INTO usertype (code, name, description, createdBy, createdDate, updatedBy, updatedDate)
-VALUES ('NORMAL', 'Normal User Account', 'Account for normal users', 0, NOW(), 0, NOW());
-INSERT INTO usertype (code, name, description, createdBy, createdDate, updatedBy, updatedDate)
-VALUES ('LEAD', 'Lead User Account', 'Account for lead users', 0, NOW(), 0, NOW());
-INSERT INTO usertype (code, name, description, createdBy, createdDate, updatedBy, updatedDate)
-VALUES ('QA_MANAGER', 'QA Manager Account (Admin)', 'Account for QA Managers', 0, NOW(), 0, NOW());
-INSERT INTO usertype (code, name, description, createdBy, createdDate, updatedBy, updatedDate)
-VALUES ('SUPER_ADMIN', 'Super Admin', 'Account for Super Admins', 0, NOW(), 0, NOW());
+INSERT INTO UserType (code, name, description, createdBy, createdDate, updatedBy, updatedDate)
+VALUES ('RANK_AND_FILE', 'Rank and File', 'Account for rank and file users', 0, NOW(), 0, NOW());
+INSERT INTO UserType (code, name, description, createdBy, createdDate, updatedBy, updatedDate)
+VALUES ('SUPERVISOR', 'Supervisor', 'Account for supervisor users', 0, NOW(), 0, NOW());
+INSERT INTO UserType (code, name, description, createdBy, createdDate, updatedBy, updatedDate)
+VALUES ('QA_MANAGER', 'Manager', 'Account for QA Managers', 0, NOW(), 0, NOW());
+INSERT INTO UserType (code, name, description, createdBy, createdDate, updatedBy, updatedDate)
+VALUES ('ADMIN', 'Admin', 'Account for Admins', 0, NOW(), 0, NOW());
 
+INSERT INTO user (username, password, first_name, middle_name, last_name, email, userType_id, last_Login, validated, invalid_login, activeFlag, createdBy, createdDate, updatedBy, updatedDate)
+VALUES ('MBO18056', 'jiobvVncxw07G9Z+6LtihKDKhLSYg6q3okeotXGQmco=', 'Milca', 'Belga', 'Oliveros', 'milca@admin.com', 2, '0001-01-01 00:00:00', 0, 0, 1, 0, NOW(), 0, NOW()),
+('MCL18057', 'jiobvVncxw07G9Z+6LtihKDKhLSYg6q3okeotXGQmco=', 'Michael', 'Campos', 'Lim', 'michael.lim@admin.com', 2, '0001-01-01 00:00:00', 0, 0, 1, 0, NOW(), 0, NOW()),
+('JFE18058', 'jiobvVncxw07G9Z+6LtihKDKhLSYg6q3okeotXGQmco=', 'Joy', 'Flores', 'Esquivel', 'joy@admin.com', 3, '0001-01-01 00:00:00', 0, 0, 1, 0, NOW(), 0, NOW()),
+('AFL18059', 'jiobvVncxw07G9Z+6LtihKDKhLSYg6q3okeotXGQmco=', 'Anna', 'Franco', 'Lucas', 'anna.lucas@admin.com', 2, '0001-01-01 00:00:00', 0, 0, 1, 0, NOW(), 0, NOW()),
+('MMG18060', 'jiobvVncxw07G9Z+6LtihKDKhLSYg6q3okeotXGQmco=', 'Maye', 'Medes', 'Gallardo', 'mae.gallardo@admin.com', 2, '0001-01-01 00:00:00', 0, 0, 1, 0, NOW(), 0, NOW()),
+('RCS18062', 'jiobvVncxw07G9Z+6LtihKDKhLSYg6q3okeotXGQmco=', 'Renaleen', 'Cayang', 'Sobere', 'renaleen.sobere@admin.com', 2, '0001-01-01 00:00:00', 0, 0, 1, 0, NOW(), 0, NOW()),
+('JBJ18064', 'jiobvVncxw07G9Z+6LtihKDKhLSYg6q3okeotXGQmco=', 'Jeoffrey', 'Benitez', 'Jalac', 'jeoffrey.jalac@admin.com', 1, '0001-01-01 00:00:00', 0, 0, 1, 0, NOW(), 0, NOW()),
+('JCC18066', 'jiobvVncxw07G9Z+6LtihKDKhLSYg6q3okeotXGQmco=', 'Jun', 'Cabatay', 'Comple', 'jun.comple@admin.com', 1, '0001-01-01 00:00:00', 0, 0, 1, 0, NOW(), 0, NOW()),
+('KPF18067', 'jiobvVncxw07G9Z+6LtihKDKhLSYg6q3okeotXGQmco=', 'Krizzle', 'Paneda', 'Fontanos', 'krizzle.fontanos@admin.com', 1, '0001-01-01 00:00:00', 0, 0, 1, 0, NOW(), 0, NOW()),
+('BCM18068', 'jiobvVncxw07G9Z+6LtihKDKhLSYg6q3okeotXGQmco=', 'Bea', 'Castro', 'Macalindong', 'bea.macalindong@admin.com', 1, '0001-01-01 00:00:00', 0, 0, 1, 0, NOW(), 0, NOW()),
+('DTR18069', 'jiobvVncxw07G9Z+6LtihKDKhLSYg6q3okeotXGQmco=', 'Don', 'Toledo', 'Reyes', 'don.reyes@admin.com', 2, '0001-01-01 00:00:00', 0, 0, 1, 0, NOW(), 0, NOW()),
+('RPS18074', 'jiobvVncxw07G9Z+6LtihKDKhLSYg6q3okeotXGQmco=', 'Roldan', 'Panuelos', 'Saldaña', 'roldan.saldana@admin.com', 1, '0001-01-01 00:00:00', 0, 0, 1, 0, NOW(), 0, NOW()),
+('admin', 'jiobvVncxw07G9Z+6LtihKDKhLSYg6q3okeotXGQmco=', 'Lotus', 'Labs', 'Admin', 'admin@admin.com', 4, '0001-01-01 00:00:00', 0, 0, 1, 0, NOW(), 0, NOW());
+
+INSERT INTO worktype (code, name, description, activeFlag, createdBy, createdDate, updatedBy, updatedDate) 
+VALUES ('WORK0001', 'Project Management', '', 1, 0,'0001-01-01 00:00:00', 1, NOW()), 
+('WORK0002', 'QA Management', '', 1, 0, '0001-01-01 00:00:00', 1, NOW()),
+('WORK0003', 'Others', '', 1, 0, '0001-01-01 00:00:00', 1, NOW());
 
 SELECT * FROM worktype;
+
+INSERT INTO project (code, name, work_type_id, description, activeFlag, createdBy, createdDate, updatedBy, updatedDate) 
+VALUES ('PROJ0001','FDJ', 1, NULL, 1, 0, NOW(), 0, '0001-01-01 00:00:00'),
+('PROJ0002','ISBB', 1, NULL, 1, 0, NOW(), 0, '0001-01-01 00:00:00'),
+('PROJ0003','Offside', 1, NULL, 1, 0, NOW(), 0, '0001-01-01 00:00:00'),
+('PROJ0004','BF/Gama', 1, NULL, 1, 0, NOW(), 0, '0001-01-01 00:00:00'),
+('PROJ0005','LoRo', 1, NULL, 1, 0, NOW(), 0, '0001-01-01 00:00:00'),
+('PROJ0006','BetRadar', 1, NULL, 1, 0, NOW(), 0, '0001-01-01 00:00:00'),
+('PROJ0007','Hydra', 1, NULL, 1, 0, NOW(), 0, '0001-01-01 00:00:00'),
+('PROJ0008','StevenHill', 1, NULL, 1, 0, NOW(), 0, '0001-01-01 00:00:00'),
+('PROJ0009','Automation', 1, NULL, 1, 0, NOW(), 0, '0001-01-01 00:00:00'),
+('PROJ0010','Tech. Document', 1, NULL, 1, 0, NOW(), 0, '0001-01-01 00:00:00'),
+('PROJ0011','MTS', 1, NULL, 1, 0, NOW(), 0, '0001-01-01 00:00:00'),
+('PROJ0012','Portugal', 1, NULL, 1, 0, NOW(), 0, '0001-01-01 00:00:00'),
+('PROJ0013','MEX Logrand', 1, NULL, 1, 0, NOW(), 0, '0001-01-01 00:00:00'),
+('PROJ0014','FDJ Druid', 1, NULL, 1, 0, NOW(), 0, '0001-01-01 00:00:00'),
+('PROJ0015','Overall Project Management', 2, NULL, 1, 0, NOW(), 0, '0001-01-01 00:00:00'),
+('PROJ0016','LVS Project Management', 2, NULL, 1, 0, NOW(), 0, '0001-01-01 00:00:00'),
+('PROJ0017','Resource Management', 2, NULL, 1, 0, NOW(), 0, '0001-01-01 00:00:00'),
+('PROJ0018','Training Management', 2, NULL, 1, 0, NOW(), 0, '0001-01-01 00:00:00'),
+('PROJ0019','Automation and Technology Management', 2, NULL, 1, 0, NOW(), 0, '0001-01-01 00:00:00'),
+('PROJ0020','Process Improvement Management', 2, NULL, 1, 0, NOW(), 0, '0001-01-01 00:00:00'),
+('PROJ0021','Process Compliance Management', 2, NULL, 1, 0, NOW(), 0, '0001-01-01 00:00:00'),
+('PROJ0022','Knowledgebase Management', 2, NULL, 1, 0, NOW(), 0, '0001-01-01 00:00:00'),
+('PROJ0023','Others', 3, NULL, 1, 0, NOW(), 0, '0001-01-01 00:00:00');
+
+SELECT * FROM project;
+
+INSERT INTO tasktype (code, name, description, activeFlag, createdBy, createdDate, updatedBy, updatedDate)
+VALUES ('TASK0001', 'Analysis', NULL, 1, 0, NOW(), 0, '0001-01-01 00:00:00'),
+('TASK0002', 'Automation Testing', NULL, 1, 0, NOW(), 0, '0001-01-01 00:00:00'),
+('TASK0003', 'Break', NULL, 1, 0, NOW(), 0, '0001-01-01 00:00:00'),
+('TASK0004', 'Data Creation', NULL, 1, 0, NOW(), 0, '0001-01-01 00:00:00'),
+('TASK0005', 'Documentation', NULL, 1, 0, NOW(), 0, '0001-01-01 00:00:00'),
+('TASK0006', 'Integration Testing', NULL, 1, 0, NOW(), 0, '0001-01-01 00:00:00'),
+('TASK0007', 'Meeting', NULL, 1, 0, NOW(), 0, '0001-01-01 00:00:00'),
+('TASK0008', 'Others', NULL, 1, 0, NOW(), 0, '0001-01-01 00:00:00'),
+('TASK0009', 'Pre-Release', NULL, 1, 0, NOW(), 0, '0001-01-01 00:00:00'),
+('TASK0010', 'Regression', NULL, 1, 0, NOW(), 0, '0001-01-01 00:00:00'),
+('TASK0011', 'Sanity Testing', NULL, 1, 0, NOW(), 0, '0001-01-01 00:00:00'),
+('TASK0012', 'Smoke Testing', NULL, 1, 0, NOW(), 0, '0001-01-01 00:00:00'),
+('TASK0013', 'Specifications Review', NULL, 1, 0, NOW(), 0, '0001-01-01 00:00:00'),
+('TASK0014', 'Test Case Creation', NULL, 1, 0, NOW(), 0, '0001-01-01 00:00:00'),
+('TASK0015', 'Test Case Review', NULL, 1, 0, NOW(), 0, '0001-01-01 00:00:00'),
+('TASK0016', 'Test Case Update', NULL, 1, 0, NOW(), 0, '0001-01-01 00:00:00'),
+('TASK0017', 'Test Script Creation', NULL, 1, 0, NOW(), 0, '0001-01-01 00:00:00'),
+('TASK0018', 'Training', NULL, 1, 0, NOW(), 0, '0001-01-01 00:00:00'),
+('TASK0019', 'Verification', NULL, 1, 0, NOW(), 0, '0001-01-01 00:00:00');
+
+SELECT * FROM tasktype;
