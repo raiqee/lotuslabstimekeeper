@@ -91,12 +91,13 @@ namespace LotusLabsTimeTracker.views
 
         private void WorkType_Load(object sender, EventArgs e)
         {
-            var editIcon = new Bitmap(LotusLabsTimeTracker.Properties.Resources.PMEF);
+            var editIcon = new Bitmap(LotusLabsTimeTracker.Properties.Resources.edit,8,8);
+        
             refreshData();
             DataGridViewImageColumn editColumn = new DataGridViewImageColumn();
             editColumn.Name = "Edit";
             editColumn.Image = editIcon;
-            //editColumn.Width = 100;
+            editColumn.Width = 100;
             //editColumn.UseColumnTextForButtonValue = true;
 
             if (dataGridView1.Columns["Edit"] == null)
