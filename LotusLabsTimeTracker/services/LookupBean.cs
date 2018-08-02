@@ -28,6 +28,7 @@ namespace LotusLabsTimeTracker.services
             if (isActiveOnly) {
                 return getMySession().QueryOver<WorkType>()
                     .Where(x => x.activeFlag == isActiveOnly)
+                    .OrderBy(x => x.name).Asc
                     .List();
             }
             return getMySession().QueryOver<WorkType>().List();
@@ -38,6 +39,7 @@ namespace LotusLabsTimeTracker.services
             if (isActiveOnly){
                 return getMySession().QueryOver<TaskType>()
                     .Where(x => x.activeFlag == isActiveOnly)
+                    .OrderBy(x => x.name).Asc
                     .List();
             }
             return getMySession().QueryOver<TaskType>().List();
@@ -48,6 +50,7 @@ namespace LotusLabsTimeTracker.services
             if (isActiveOnly){
                 return getMySession().QueryOver<Project>()
                     .Where(x => x.activeFlag == isActiveOnly)
+                    .OrderBy(x => x.name).Asc
                     .List();
             }
             return getMySession().QueryOver<Project>().List();
@@ -59,10 +62,12 @@ namespace LotusLabsTimeTracker.services
             {
                 return getMySession().QueryOver<Project>()
                     .Where(x => x.activeFlag == isActiveOnly && x.workType.id == workType.id)
+                    .OrderBy(x => x.name).Asc
                     .List();
             }
             return getMySession().QueryOver<Project>()
                 .Where(x => x.workType.id == workType.id)
+                .OrderBy(x => x.name).Asc
                 .List();
         }
 
