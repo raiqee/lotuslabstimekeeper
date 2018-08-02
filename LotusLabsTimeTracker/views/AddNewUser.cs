@@ -15,8 +15,8 @@ namespace LotusLabsTimeTracker.views
 {
     public partial class addNewUser : Form
     {
-        private readonly Main _main;
-        public addNewUser(Main main)
+        private readonly ProfileManager _main;
+        public addNewUser(ProfileManager main)
         {
             InitializeComponent();
             _main = main;

@@ -65,7 +65,10 @@ namespace LotusLabsTimeTracker.views
 
         private void MainMenu_Load(object sender, EventArgs e)
         {
-
+            if (currentSessionUser.usertype.code.Equals(Constants.ROLE_RANK_AND_FILE))
+            {
+                btn_maintenance.Enabled = false;
+            }
         }
 
         public Users getCurrentSessionUser()

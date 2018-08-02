@@ -87,6 +87,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Task Manager";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TaskManager_FormClosed);
+            this.Load += new System.EventHandler(this.TaskManager_Load);
             this.ResumeLayout(false);
 
         }

@@ -40,7 +40,7 @@
             // btn_logOut
             // 
             this.btn_logOut.Image = global::LotusLabsTimeTracker.Properties.Resources.LogOut;
-            this.btn_logOut.Location = new System.Drawing.Point(699, 33);
+            this.btn_logOut.Location = new System.Drawing.Point(559, 24);
             this.btn_logOut.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_logOut.Name = "btn_logOut";
             this.btn_logOut.Size = new System.Drawing.Size(128, 114);
@@ -53,7 +53,7 @@
             // btn_maintenance
             // 
             this.btn_maintenance.Image = global::LotusLabsTimeTracker.Properties.Resources.Maintenance;
-            this.btn_maintenance.Location = new System.Drawing.Point(536, 33);
+            this.btn_maintenance.Location = new System.Drawing.Point(425, 24);
             this.btn_maintenance.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_maintenance.Name = "btn_maintenance";
             this.btn_maintenance.Size = new System.Drawing.Size(128, 114);
@@ -65,8 +65,9 @@
             // 
             // btn_leaveForm
             // 
+            this.btn_leaveForm.Enabled = false;
             this.btn_leaveForm.Image = global::LotusLabsTimeTracker.Properties.Resources.LeaveForm;
-            this.btn_leaveForm.Location = new System.Drawing.Point(368, 33);
+            this.btn_leaveForm.Location = new System.Drawing.Point(291, 24);
             this.btn_leaveForm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_leaveForm.Name = "btn_leaveForm";
             this.btn_leaveForm.Size = new System.Drawing.Size(128, 114);
@@ -78,8 +79,9 @@
             // 
             // btn_pmef
             // 
+            this.btn_pmef.Enabled = false;
             this.btn_pmef.Image = global::LotusLabsTimeTracker.Properties.Resources.PMEF;
-            this.btn_pmef.Location = new System.Drawing.Point(205, 33);
+            this.btn_pmef.Location = new System.Drawing.Point(157, 24);
             this.btn_pmef.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_pmef.Name = "btn_pmef";
             this.btn_pmef.Size = new System.Drawing.Size(128, 114);
@@ -92,7 +94,7 @@
             // btn_prodModule
             // 
             this.btn_prodModule.Image = global::LotusLabsTimeTracker.Properties.Resources.ProductionModule;
-            this.btn_prodModule.Location = new System.Drawing.Point(43, 33);
+            this.btn_prodModule.Location = new System.Drawing.Point(23, 24);
             this.btn_prodModule.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_prodModule.Name = "btn_prodModule";
             this.btn_prodModule.Size = new System.Drawing.Size(128, 114);
@@ -105,7 +107,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::LotusLabsTimeTracker.Properties.Resources.Lotus_Labs__Transparent__04_17_2018;
-            this.pictureBox1.Location = new System.Drawing.Point(221, 180);
+            this.pictureBox1.Location = new System.Drawing.Point(154, 169);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(399, 100);
@@ -117,7 +119,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(861, 293);
+            this.ClientSize = new System.Drawing.Size(712, 293);
             this.ControlBox = false;
             this.Controls.Add(this.btn_logOut);
             this.Controls.Add(this.btn_maintenance);
@@ -127,8 +129,8 @@
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.MaximumSize = new System.Drawing.Size(883, 344);
-            this.MinimumSize = new System.Drawing.Size(883, 344);
+            this.MaximumSize = new System.Drawing.Size(734, 344);
+            this.MinimumSize = new System.Drawing.Size(734, 344);
             this.Name = "MainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main Menu";

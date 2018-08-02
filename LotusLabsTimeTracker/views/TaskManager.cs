@@ -59,5 +59,10 @@ namespace LotusLabsTimeTracker.views
         {
             _maintenanceMenu.Show();
         }
+
+        private void TaskManager_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

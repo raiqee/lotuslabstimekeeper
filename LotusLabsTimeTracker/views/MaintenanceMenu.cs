@@ -24,7 +24,8 @@ namespace LotusLabsTimeTracker.views
 
         private void btn_prodMgr_Click(object sender, EventArgs e)
         {
-            ProfileManager profileMgr = new ProfileManager();
+            ProfileManager profileMgr = new ProfileManager(this);
+            profileMgr.setCurrentSessionUser(this.currentSessionUser);
             profileMgr.Show();
             this.Hide();
         }

@@ -232,6 +232,14 @@ namespace LotusLabsTimeTracker.views
 
         private void ProductionModule_FormClosed(object sender, FormClosedEventArgs e)
         {
+            if (btn_prodStart.Enabled == false)
+            {
+                if (runningId != 0)
+                {
+                    getProductionController().deleteUserTask(runningId);
+                    myTimer.Stop();
+                }
+            }
             _mainMenu.Show();
         }
 

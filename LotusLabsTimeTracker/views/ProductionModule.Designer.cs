@@ -196,6 +196,7 @@
             // btn_prodReport
             // 
             this.btn_prodReport.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btn_prodReport.Enabled = false;
             this.btn_prodReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_prodReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_prodReport.ForeColor = System.Drawing.SystemColors.ControlLightLight;

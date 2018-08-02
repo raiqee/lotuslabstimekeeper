@@ -207,6 +207,8 @@
             this.Name = "ProfileManager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Profile Manager";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ProfileManager_FormClosed);
+            this.Load += new System.EventHandler(this.ProfileManager_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
