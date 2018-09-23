@@ -11,6 +11,7 @@
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -23,7 +24,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -113,6 +113,7 @@
     <Compile Include="services\HibernateSessionFactory.cs" />
     <Compile Include="services\LookupBean.cs" />
     <Compile Include="services\ModuleBean.cs" />
+    <Compile Include="services\ProductionBean.cs" />
     <Compile Include="services\UserBean.cs" />
     <Compile Include="services\UserTaskBean.cs" />
     <Compile Include="utilities\GlobalUtility.cs" />
@@ -130,6 +131,12 @@
       <DependentUpon>ChangePassword.cs</DependentUpon>
     </Compile>
     <Compile Include="views\ComboBoxItem.cs" />
+    <Compile Include="views\EditUserPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\EditUserPage.Designer.cs">
+      <DependentUpon>EditUserPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\FiledPMEF.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,12 +160,6 @@
     </Compile>
     <Compile Include="views\PMEF.Designer.cs">
       <DependentUpon>PMEF.cs</DependentUpon>
-    </Compile>
-    <Compile Include="views\EditUser.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="views\EditUser.Designer.cs">
-      <DependentUpon>EditUser.cs</DependentUpon>
     </Compile>
     <Compile Include="views\MainMenu.cs">
       <SubType>Form</SubType>
@@ -233,20 +234,21 @@
     <EmbeddedResource Include="views\ChangePassword.resx">
       <DependentUpon>ChangePassword.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="views\EditUserPage.resx">
+      <DependentUpon>EditUserPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="views\FIledLeaveForm.resx">
       <DependentUpon>FIledLeaveForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\FiledPMEF.resx">
       <DependentUpon>FiledPMEF.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="views\LeaveForm.resx">
       <DependentUpon>LeaveForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\PMEF.resx">
       <DependentUpon>PMEF.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="views\EditUser.resx">
-      <DependentUpon>EditUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
@@ -330,6 +332,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="database\database.txt" />
+    <Content Include="database\V1_ADD_SUPERVISOR_COLUMN.sql" />
     <Content Include="edit.png" />
     <None Include="Resources\edit.png" />
   </ItemGroup>

@@ -31,7 +31,9 @@ namespace LotusLabsTimeTracker.services
         public void deleteUserTask(long id)
         {
             UserTask userTask = getUserTask(id);
-            getMySession().Delete(userTask);
+            if(userTask != null){
+                getMySession().Delete(userTask);
+            }
             getMySession().Transaction.Commit();
         }
     }

@@ -19,5 +19,6 @@
     <property name="createdDate" column="createdDate"/>
     <property name="updatedBy" column="updatedBy"/>
     <property name="updatedDate" column="updatedDate"/>
+    <many-to-one name="supervisor" column="supervisor_id"/>
   </class>
 </hibernate-mapping>

@@ -247,5 +247,23 @@ namespace LotusLabsTimeTracker.views
         {
             return new LookupController();
         }
+
+        private void btn_prodReport_Click(object sender, EventArgs e)
+        {
+            ProductReport productReport = new ProductReport(this);
+            productReport.setCurrentSessionUser(this.currentSessionUser);
+            productReport.Show();
+            this.Hide();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_elapsedTime_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

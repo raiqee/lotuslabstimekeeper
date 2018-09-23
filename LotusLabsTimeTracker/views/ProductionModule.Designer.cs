@@ -115,6 +115,7 @@
             // txt_prodDetails
             // 
             this.txt_prodDetails.Location = new System.Drawing.Point(37, 385);
+            this.txt_prodDetails.MaxLength = 255;
             this.txt_prodDetails.Multiline = true;
             this.txt_prodDetails.Name = "txt_prodDetails";
             this.txt_prodDetails.Size = new System.Drawing.Size(409, 132);
@@ -149,6 +150,7 @@
             this.lbl_elapsedTime.Size = new System.Drawing.Size(72, 17);
             this.lbl_elapsedTime.TabIndex = 17;
             this.lbl_elapsedTime.Text = "00:00:00";
+            this.lbl_elapsedTime.Click += new System.EventHandler(this.lbl_elapsedTime_Click);
             // 
             // btn_prodStart
             // 
@@ -196,7 +198,6 @@
             // btn_prodReport
             // 
             this.btn_prodReport.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btn_prodReport.Enabled = false;
             this.btn_prodReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_prodReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_prodReport.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -206,6 +207,7 @@
             this.btn_prodReport.TabIndex = 29;
             this.btn_prodReport.Text = "View Report";
             this.btn_prodReport.UseVisualStyleBackColor = false;
+            this.btn_prodReport.Click += new System.EventHandler(this.btn_prodReport_Click);
             // 
             // groupBox1
             // 
@@ -220,6 +222,7 @@
             this.groupBox1.Size = new System.Drawing.Size(409, 95);
             this.groupBox1.TabIndex = 30;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // lbl_currentDate
             // 

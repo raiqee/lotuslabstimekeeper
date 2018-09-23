@@ -159,5 +159,10 @@ namespace LotusLabsTimeTracker.views
             }
             refreshData();
         }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -19,5 +19,6 @@ namespace LotusLabsTimeTracker.model
         public virtual DateTime last_login { get; set; }
         public virtual int invalid_login { get; set; }
         public virtual Boolean validated { get; set; }
+        public virtual Users supervisor { get; set; }
     }
 }

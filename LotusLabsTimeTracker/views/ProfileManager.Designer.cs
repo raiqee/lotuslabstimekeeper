@@ -28,90 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.empNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.empPos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.empLead = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.empStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lnk_addNewEmployee = new System.Windows.Forms.LinkLabel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.btn_editUser = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.cmbSearchSupervisor = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cmbSearchPosition = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnFilter = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.empNo,
-            this.fname,
-            this.mname,
-            this.lname,
-            this.empPos,
-            this.email,
-            this.empLead,
-            this.empStatus});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(845, 322);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // empNo
-            // 
-            this.empNo.HeaderText = "Employee Number";
-            this.empNo.Name = "empNo";
-            this.empNo.Width = 140;
-            // 
-            // fname
-            // 
-            this.fname.HeaderText = "First Name";
-            this.fname.Name = "fname";
-            // 
-            // mname
-            // 
-            this.mname.HeaderText = "Middle Name";
-            this.mname.Name = "mname";
-            // 
-            // lname
-            // 
-            this.lname.HeaderText = "Last Name";
-            this.lname.Name = "lname";
-            // 
-            // empPos
-            // 
-            this.empPos.HeaderText = "Position";
-            this.empPos.Name = "empPos";
-            // 
-            // email
-            // 
-            this.email.HeaderText = "Email";
-            this.email.Name = "email";
-            // 
-            // empLead
-            // 
-            this.empLead.HeaderText = "Supervisor";
-            this.empLead.Name = "empLead";
-            // 
-            // empStatus
-            // 
-            this.empStatus.HeaderText = "Status";
-            this.empStatus.Name = "empStatus";
             // 
             // lnk_addNewEmployee
             // 
             this.lnk_addNewEmployee.AutoSize = true;
             this.lnk_addNewEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lnk_addNewEmployee.Location = new System.Drawing.Point(640, 337);
+            this.lnk_addNewEmployee.Location = new System.Drawing.Point(3, 346);
             this.lnk_addNewEmployee.Name = "lnk_addNewEmployee";
             this.lnk_addNewEmployee.Size = new System.Drawing.Size(200, 25);
             this.lnk_addNewEmployee.TabIndex = 1;
@@ -119,53 +57,13 @@
             this.lnk_addNewEmployee.Text = "Add New Employee";
             this.lnk_addNewEmployee.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnk_addNewEmployee_LinkClicked);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 390);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 25);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Position :";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(155, 382);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(187, 33);
-            this.comboBox1.TabIndex = 3;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(155, 446);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(187, 33);
-            this.comboBox2.TabIndex = 5;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(13, 454);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(135, 25);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Supervisor : ";
-            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.Highlight;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Location = new System.Drawing.Point(433, 402);
+            this.button1.Location = new System.Drawing.Point(8, 385);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(159, 62);
@@ -173,42 +71,149 @@
             this.button1.Text = "Save";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // btn_editUser
+            // panel1
             // 
-            this.btn_editUser.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btn_editUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_editUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_editUser.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_editUser.Location = new System.Drawing.Point(664, 402);
-            this.btn_editUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_editUser.Name = "btn_editUser";
-            this.btn_editUser.Size = new System.Drawing.Size(159, 62);
-            this.btn_editUser.TabIndex = 14;
-            this.btn_editUser.Text = "Load";
-            this.btn_editUser.UseVisualStyleBackColor = false;
-            this.btn_editUser.Click += new System.EventHandler(this.btn_editUser_Click);
+            this.panel1.Controls.Add(this.btnClear);
+            this.panel1.Controls.Add(this.cmbSearchSupervisor);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.cmbSearchPosition);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.btnFilter);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1147, 52);
+            this.panel1.TabIndex = 15;
+            // 
+            // cmbSearchSupervisor
+            // 
+            this.cmbSearchSupervisor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSearchSupervisor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSearchSupervisor.FormattingEnabled = true;
+            this.cmbSearchSupervisor.Location = new System.Drawing.Point(824, 11);
+            this.cmbSearchSupervisor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbSearchSupervisor.Name = "cmbSearchSupervisor";
+            this.cmbSearchSupervisor.Size = new System.Drawing.Size(311, 33);
+            this.cmbSearchSupervisor.TabIndex = 18;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(697, 14);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(135, 25);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "Supervisor : ";
+            // 
+            // cmbSearchPosition
+            // 
+            this.cmbSearchPosition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSearchPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSearchPosition.FormattingEnabled = true;
+            this.cmbSearchPosition.Location = new System.Drawing.Point(475, 11);
+            this.cmbSearchPosition.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbSearchPosition.Name = "cmbSearchPosition";
+            this.cmbSearchPosition.Size = new System.Drawing.Size(187, 33);
+            this.cmbSearchPosition.TabIndex = 16;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(367, 14);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(102, 25);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "Position :";
+            // 
+            // btnFilter
+            // 
+            this.btnFilter.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFilter.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnFilter.Location = new System.Drawing.Point(12, 8);
+            this.btnFilter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnFilter.Name = "btnFilter";
+            this.btnFilter.Size = new System.Drawing.Size(159, 36);
+            this.btnFilter.TabIndex = 14;
+            this.btnFilter.Text = "Filter";
+            this.btnFilter.UseVisualStyleBackColor = false;
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Location = new System.Drawing.Point(0, 52);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1147, 282);
+            this.panel2.TabIndex = 16;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(1147, 282);
+            this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnCancel.Location = new System.Drawing.Point(173, 385);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(159, 62);
+            this.btnCancel.TabIndex = 17;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnClear.Location = new System.Drawing.Point(177, 8);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(159, 36);
+            this.btnClear.TabIndex = 15;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.button2_Click);
             // 
             // ProfileManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(869, 519);
-            this.Controls.Add(this.btn_editUser);
+            this.ClientSize = new System.Drawing.Size(1147, 466);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.lnk_addNewEmployee);
-            this.Controls.Add(this.dataGridView1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.MaximumSize = new System.Drawing.Size(887, 566);
-            this.MinimumSize = new System.Drawing.Size(887, 566);
+            this.MaximumSize = new System.Drawing.Size(1165, 513);
+            this.MinimumSize = new System.Drawing.Size(1165, 513);
             this.Name = "ProfileManager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Profile Manager";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ProfileManager_FormClosed);
             this.Load += new System.EventHandler(this.ProfileManager_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -216,22 +221,17 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn empNo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fname;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mname;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lname;
-        private System.Windows.Forms.DataGridViewTextBoxColumn empPos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn email;
-        private System.Windows.Forms.DataGridViewTextBoxColumn empLead;
-        private System.Windows.Forms.DataGridViewTextBoxColumn empStatus;
         private System.Windows.Forms.LinkLabel lnk_addNewEmployee;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btn_editUser;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnFilter;
+        private System.Windows.Forms.ComboBox cmbSearchSupervisor;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cmbSearchPosition;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnClear;
     }
 }
