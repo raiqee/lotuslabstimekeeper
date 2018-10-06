@@ -180,6 +180,7 @@ namespace LotusLabsTimeTracker.views
 
             var csvString = new StringBuilder();
             //headers
+            csvString.Append("Employee Number").Append(separator);
             csvString.Append("Date").Append(separator);
             csvString.Append("Task").Append(separator);
             csvString.Append("Project").Append(separator);
@@ -192,16 +193,17 @@ namespace LotusLabsTimeTracker.views
 
             foreach (DataGridViewRow row in dataGridView1.Rows) {
 
-                csvString.Append(delimiter + Convert.ToDateTime(row.Cells[1].Value.ToString()).ToString("MM/dd/yyyy HH:mm:ss") + delimiter).Append(separator);
+                csvString.Append(delimiter + row.Cells[1].Value + delimiter).Append(separator);
                 csvString.Append(delimiter + row.Cells[2].Value + delimiter).Append(separator);
                 csvString.Append(delimiter + row.Cells[3].Value + delimiter).Append(separator);
                 csvString.Append(delimiter + row.Cells[4].Value + delimiter).Append(separator);
                 csvString.Append(delimiter + row.Cells[5].Value + delimiter).Append(separator);
-                csvString.Append(delimiter + Convert.ToDateTime(row.Cells[6].Value.ToString()).ToString("MM/dd/yyyy HH:mm:ss") + delimiter).Append(separator);
-                csvString.Append(delimiter + Convert.ToDateTime(row.Cells[7].Value.ToString()).ToString("MM/dd/yyyy HH:mm:ss") + delimiter).Append(separator);
+                csvString.Append(delimiter + row.Cells[6].Value + delimiter).Append(separator);
+                csvString.Append(delimiter + row.Cells[7].Value + delimiter).Append(separator);
+                csvString.Append(delimiter + row.Cells[8].Value + delimiter).Append(separator);
 
-                DateTime startDate = Convert.ToDateTime(row.Cells[6].Value.ToString());
-                DateTime endDate = Convert.ToDateTime(row.Cells[7].Value.ToString());
+                DateTime startDate = Convert.ToDateTime(row.Cells[7].Value.ToString());
+                DateTime endDate = Convert.ToDateTime(row.Cells[8].Value.ToString());
 
                 TimeSpan elapsed = (endDate - startDate);
 

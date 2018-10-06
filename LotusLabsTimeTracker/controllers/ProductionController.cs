@@ -48,6 +48,7 @@ namespace LotusLabsTimeTracker.controllers
         {
             DataTable dataTable = new DataTable();
             dataTable.Columns.Add("ID");
+            dataTable.Columns.Add("Employee Number");
             dataTable.Columns.Add("Date");
             dataTable.Columns.Add("Task");
             dataTable.Columns.Add("Project");
@@ -62,6 +63,7 @@ namespace LotusLabsTimeTracker.controllers
                 {
                     dataTable.Rows.Add(new object[] { userTask.id,
                                                       String.Format("{0:MM/dd/yy}",userTask.createdDate),
+                                                      getFullName(userTask.user),
                                                       userTask.taskType.name,
                                                       userTask.project.name,
                                                       userTask.workType.name,
@@ -86,6 +88,13 @@ namespace LotusLabsTimeTracker.controllers
             return new ProductionBean();
         }
 
-        
+        public String getFullName(Users user)
+        {
+            if (user != null)
+            {
+                return user.lastName + ", " + user.firstName + " " + user.middleName;
+            }
+            return "";
+        }
     }
 }
